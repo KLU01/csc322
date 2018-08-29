@@ -1,0 +1,102 @@
+= Software Engineering
+8/29/2018
+'''
+
+Chunk swapping algorithm
+Computer Science:: Problem solving with computers with lowest complexity.
+
+== Skip Lists
+Skip List:: Improve data efficiency. Widely used. Real world problem solving inspired by express line of NYC subway.
++
+Suppose we have `n` local stations (`n` is huge). Smart way to travel a lot of stops would be to take local train to a station where they can connect to an express line.
++
+To add express line, you must justify the extra money, space, human power. An express line will minimize time, and the number of stops.
+
+.How many "stops" should we have? 
+Skip list is really a linked list. N nodes, with one-way links from each adjacent node. What is the average time to visit/access any random node?
+On average, without an express line, you have to visit `n/2` nodes. This is linear access time complexity.
+
+NOTE: The n/2 average is computed with the assumption that each node is chosen with equal probability.
+
+If we add an "express line" we can skip some nodes to save time.
+
+.How many express stations should we have?
+We want to reduce time complexity from linear to sublinear. How many xpress stations should we create? How many skipped nodes should we create?
+
+Math/algorithm modeling::Objective of adding express lines (skip nodes) is: We want to minimize number of stops.
+
+We start with::
++
+`n` local stops/nodes.
++
+`x` express nodes. Unknown.
+
+Assume we already decided an `x` number of express stations. How many stops will an average, reasonably smart, rider have to make. Let's minimize the number of stops after adding `x` express stations.
+
+1. On average, `x/2` express.
+2. On average, how many local stations would a reasonable rider make? `N/2X`.
++
+Why? Because between each express stop there are `n/x` local stops. And on average, you will go to half of those before reaching your destination.
+
+How many total stops will he ride?
+```
+f(x) = (x/2) + (n/2x) = (x + n / x) / 2
+x = argmin_x f(x) = x+N/x
+
+f(x) = x+N/x
+f'(x) = 1 - N / x^2 = 0
+x = sqrt(n) 
+```
+
+Final time complexity is `O(sqrt(n))`. Sublinear.
+
+== Motivation for Software Engineering
+
+Motivation of software engineering:: When you want to develop a huge system, which can deliver something significant, you need software engineering.
+Software crisis:: A phenomenon of unreliable, expensive, and delayed software projects being created by incompetent teams. This is why we need S.E.
+
+WARNING: "Code + fix" is the old software development method.
+
+Bridge building:: Engineers build the bridge. Ask people to walk on the bridge. If the bridge collapses, the engineers say "sorry, we'll fix it." This is a terrible way to engineer a bridge. Why develop software like this?
+
+We want to copy convential engineering projects. What's the right way to go?
+
+Bridge building (correctly)::
+1. Do field work. Decide which portion of the river is the best side to work on. Collect information before starting.
+2. Design the blueprint.
+3. Send construction team to build based off blueprint.
+4. Stress testing. You can't allow anyone to walk on it.
+5. Deliver.
+6. Maintenance and repair.
+7. If bridge is beyond repair, retire/destroy the bridge. 
+
+Computer science equivalent::
+1. System analysis: talk to people and find their needs.
++
+(1.5) Also do planning for budget, personnel.
+2. Design the data structure + algorithm.
+3. Coding + debugging
+4. Stress testing
++
+Different team (objective evaluation)
++
+Unit testing & integration testing
+5. Deliver
+6. Maintenance, fix bugs.
+
+Double loop: forward/feedback.
+
+== The Life Cycle Model
+Life cycle concepts::
+Life cycle model:: Steps to proceed in a software system development. To go forward and backwards.  
+
+.Life Cycle Models
+. The waterfall. (Not the king anymore).
+
+== Big Data
+Data stream/streaming data processing. Part of big data.
+
+What is big data?
+- Size. Can't be stored on one machine.
+- Fast. Many real-time sensors,continuously coming in. 
+- Modalities. Data of different natures. Numerical data, video data, audio data, other data, etc. 

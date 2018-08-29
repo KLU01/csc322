@@ -1,0 +1,70 @@
+= Software Engineering
+8/26/2018
+
+www-cs.ccny.cuny.edu/~csjie/322.html
+
+Fair grading:: based on gap-classification. 
+SVM (support vector machine):: 1-layer shallow NN 
+    
+== Time Complexity 
+n = 1 billion 
+
+`log n 9`
+`log 9` 
+
+<= `O(n^3)` computable 
+
+`O(1)`:: Constant 
++
+Hashing is O ( log log n) ) because has to check and avoid conflicts. 
+
+`O(log n)`:: Binary/dictionary search
+`O(n ^ x)`:: Where x < 1 -- sublinear 
+`O(n)` 
+`O(n^2)`:: GUILTY 
+`O(n^3)`:: CRIMINAL 
+
+time:: cpu/GPU: run deep learning 
++
+size of input data(n)
+
+space:: size of space to be used 
++
+Big data volume is huge 
+
+time + space = efficiency 
+
+Kolmogorov (sometimes Chaitin) complexity is the size of the program. It's about understandability. Shorter program is easier to understand. More important in theoretical computer science. Make sure your code is short as possible and understandable as possible to peer programmers.
+
+Be concise when you code.
+
+.THREE COMPLEXITIES: 
+. time
+. space 
+. kolmogorov
+
+'''
+
+Chunk swapping problem:
+
+input: 1 2 3 4 5
+output: 4 5 1 2 3
+
+How to do this? 3 ways:
+
+1. Switching. But this is messy, non scalable. 
+2. Create new space/array: clean and easy to understand, but space is `O(n)` 
+3. Use a data structure like circular linked list to shift left. 
++
+space: `O(1)`
++
+time: `2n`, or `O(n)`
+
+4. Have a linked list. Change the head pointer, the tail pointer, break the link for the new head, and attach a new link from the old tail to the old head. 
++
+time: `O(1)`; only 4 links 
++
+space: each data item add one link/flag; `O(n)`
+
+Program = data structure + algorithm 
+No free lunch theorem -- you might have concise space usage, but then the time complexity will be bigger. You can write a super fast algorithm, but then it will probably use more space. 
