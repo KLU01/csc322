@@ -1,8 +1,8 @@
 = Software Engineering
 8/29/2018
-'''
 
 Chunk swapping algorithm
+
 Computer Science:: Problem solving with computers with lowest complexity.
 
 == Skip Lists
@@ -23,7 +23,7 @@ If we add an "express line" we can skip some nodes to save time.
 .How many express stations should we have?
 We want to reduce time complexity from linear to sublinear. How many xpress stations should we create? How many skipped nodes should we create?
 
-Math/algorithm modeling::Objective of adding express lines (skip nodes) is: We want to minimize number of stops.
+Math/algorithm modeling:: Objective of adding express lines (skip nodes) is: We want to minimize number of stops.
 
 We start with::
 +
@@ -97,6 +97,6 @@ Life cycle model:: Steps to proceed in a software system development. To go forw
 Data stream/streaming data processing. Part of big data.
 
 What is big data?
-- Size. Can't be stored on one machine.
-- Fast. Many real-time sensors,continuously coming in. 
-- Modalities. Data of different natures. Numerical data, video data, audio data, other data, etc. 
+* Size. Can't be stored on one machine.
+* Fast. Many real-time sensors,continuously coming in. 
+* Modalities. Data of different natures. Numerical data, video data, audio data, other data, etc. 
