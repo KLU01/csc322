@@ -96,7 +96,7 @@ Life cycle model:: Steps to proceed in a software system development. To go forw
 == Big Data
 Data stream/streaming data processing. Part of big data.
 
-What is big data?
+.What is big data?
 * Size. Can't be stored on one machine.
 * Fast. Many real-time sensors,continuously coming in. 
 * Modalities. Data of different natures. Numerical data, video data, audio data, other data, etc. 
