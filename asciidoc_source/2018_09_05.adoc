@@ -1,0 +1,115 @@
+= Software Engineering
+9/04/2018
+
+we@cs.ccny.cuny.edu
+subject: 322
+== Project Suggestions:
+1. Same topic for every team
+2. mini-amazon, ebay, stock market, bidding, pizza/chinese food order/delivery system.
+Dynamic Programming (DP): Find optimal route (for food delivery example).
+
+== Week 2
+=== Stream data processing
+Stream data processing:: Big data.
+Data Stream:: A small river, always flowing, never stopping.
+
+.Ex 1
+We have 1 sensor which will measure the temperature every 0.01 sec. What is the average temperature?
+
+If we store every data point, there are too many. One array to store them all is O(n) space complexity.
+
+Efficient solution:
+1. mean value so far: `mu`
+2. count # of data points already processed: `cnt`
+
+. t0: `mu = T(t0); cnt = 1 # Initialize 2 vars`
+. t1: `mu=(T(0) + T(1) / 2; cnt = 2`
+. ...
+. tn
+
+`new_param = old_param + diff / cnt`
+`new_param = old_param + diff * eta` where `eta = 1/cnt`
+In machine learning, `eta` is the learning factor. King parameter updating formula.
+
+NOTE: Move this above the efficient solution part
+What is the objective of statistics? Small number of stats/parameters to indicate the data. There's too much raw data to store it all.
+
+If the distribution is Gaussian, all we need to store is the mean and the std.
+
+Mean/median: typical value
+
+Bayesian learning: natural human learning process.
+
+Deep learning, `eta = 0.001`, never 0.
+
+In software engineering, we need to build systems that can evolve. For example, a program that states the president is Obama will be outdated now that Trump is president. Hard-coding is not the right thing to do.
+
+Before Obama's presidency, searching Google for `obama` would return `a small town in Japan.`
+
+.Ex 2 (medium-level difficulty)
+N customers, numbered uniquely from 1 - N, where N is extremely large.
+Make some coupon/rewards. 1 customer can only have 1 reward. Assume every customer is honest, no double dips. Assume one customer never claims his/her reward. How do you identify the missing customer?
+
+Constraint: N - 1 already claimed.
+
+DS + Alg approach is good for small data, but rarely good for big data.
+
+The solution should be simple and elegant. Never use O(n) space.
+
+Hint: use simple math.
+
+Solution: `1 + 2 + ... + N = N(N+1)/2`
+Sum total of all customers who already came.
+sum = 0
+sum += id
+
+`N(N + 1) / 2 - cust_sum = missing id`
+
+Famous algorithm in big data. Time complexity is O(1).
+
+.Ex 3
+Like Ex 2, but...
+2 customers never come.
+
+Do everything as before, now
+`N(N + 1) / 2 - cust_sum = sum of 2 missing ids`
+
+You can't find the original ids from their sum.
+Bose-Einstein statistics:: x + y + z + w = 1000, tells us how many unique vectors satisfy. It's huge.
+
+We have two unknowns, only 1 equation. So, we need another equation.
+`1^2 + 2^2 + ... + n^2
+
+This is scalable. If we have k customers who skip a reward, then we can do
+
+sum_1 += id
+sum_2 += id^2
+sum_3 += id^3
+...
+sum_k += id^k
+
+These are all fixed, so O(1).
+
+=== The Role of Math in S.E.
+. Linear algebra: Eigenvector / eigen value  (Google's pagerank)
+. Calculus: Taylor series
+. Machine learning: Gradient Descent
+. Back propagation: Just the chain rule
+
+Can use gradient descent or ascent for local min/max. It's a greedy algorithm because you might not reach the absolute maximum.
+
+Solution? Random sampling. Start from different points and choose the best.
+
+Monte-Carlo randomization. Do it randomly many times. 
+
+. Classical statistics: based on frequencies
+. Bayesian statistics: Update knowledge based on new evidence. "Let data speak". Foundation of computer science.
+
+.Probability vs Statistics?
+Probability:: Theoretical. Kolomogorov's 3 axioms. It's a mathematical topic.
+Statistics:: Applied field. Inverse of probability. Induction from small data. Get knowledge from experience/controlled test.
++
+For example, A/B testing. They roll out different GUIs to different users.
+
+Science vs non-science?
+Science is reproducible and falsifiable. There are no miracles. Double-blind testing: Fisher 1930s came up with this to test if a certain product is effective. This is why life span has increased. 
