@@ -1,0 +1,38 @@
+9/17/2018
+
+Get team roster
+You can use any programming language 
+Database is optional -- you can use an ASCII plaintext file to store small amounts of data. 
+
+Web interface is not necessary. (Could be a bonus: 5, 10). 
+
+Focus on feature/functionality
+
+Four generations of programming languages:
+1) Binary code
+2) Assembly
+3) Procedural languages 
+4) Object-Oriented Languages
+
+You only need 3 statements to be Turing-complete. What are they?
+1. conditionals statements (decision)
+2. loops/recursion
+3. sequence, c/c++ (von Neumann)
+
+Entry level programming language for CS is Pascal. 
+Wirth invented Pascal. Wirth was a student of Dijkstra (the king for CS for a while). 
+
+Most languages like C contain goto/jump statements. Dijkstra hates these statements because it leads to ugly and impossible to understand code. 
+
+Wirth created Pascal as a PURE language. No goto is possible. It's a beautiful language, but useless. 
+
+What is the most important feature of an object-oriented lang?
+1. Inheritance.
+    Why so important? 3 most important software qualities => 
+        * Reusability 
+        * Understandable
+        * User-friendly
+
+You don't need to use inheritance. You can jut copy and paste code. Why is this bad?
+
+Because if this code has a bug, then you have to remember to fix every place where you copied the snippet. 
