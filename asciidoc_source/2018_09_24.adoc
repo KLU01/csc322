@@ -1,0 +1,52 @@
+= Software Engineering
+9/24/2018
+
+== Project
+GitHub/GitLab: collaborative, version control
+easy to use
+
+home for each team
+
+== Languages
+.Declarative
+SQL: What you are interested in. Describes what you want, not how to do it. This is the dream for programming languages, but not true yet.
+
+.5th Generation Language
+Japan declared Prolog as official language. Because it is declarative. The prolog compiler will determine best way to do it.
+
+.Three Paradigms
+1. Imperative: All PL are imperative. Python/Java/etc. You have commands, assignments, loops, conditions, etc.
+2. Functional: Lisp, Haskell, Scheme, Scala. Lisp was introduced in the 1950s by MIT professor, jokes that <10 phd know functional PL. Recently, big data leads to popularity of FP.
++
+Function is a 1st class object, can be passed as argument, etc. No loops, all recursion. There are no side effects because assignment is disallowed. FP languages are lazy evaluation (good). 
+3. Logical Programming: Prolog -- programming logic. For small toy problems, its cute. Hard to use for large problems.
++
+Prolog: define new predicates
+
+== Lifecycle Models
+NOTE: WILL BE IN QUIZ
+
+Life cycle concept: team player. Must know git, to collaborate.
+
+General concepts: just the steps needed for software development.
+
+life cycle:: Copycat of the conventional engineering. Waterfall is just one example of the life cycle model.
+
+.Life cycle steps
+1. Decide feasibility of problem.
++
+Intractable (can't be solved by computer easily). Meaning if the problem if computable with a computer.
++
+Ex: 40 U.S. cities, can you find the cheapest route to visit each and every city once. This is the Travelling Salesman Problem. It is `NP-Complete` problem.
++
+NP: non-determinastic polynomial. To verify answer is O(n^k^) computable.
++
+Ex: If you have 1 suspect for a crime, it is easy to verify if they are the killer. If you have no idea who is the suspect, then its super hard to find the killer.
++
+Is `NP = P`? More likely, `NP > P`, but no proof yet.
++
+Self-driving vehicles: >1yr
++
+Facial recognition: Almost solved, pretty good, but expensive and hard. Humans can do this almost effortlessly.
++
+Iris/fingerprint to recognize human being unique texture. This is time consuming, unsanitary. Also has many false negatives (tears/blood obscuring iris). Fingerprint also has problems: damage/dirty/safety issues/sickness. 
