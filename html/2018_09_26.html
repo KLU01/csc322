@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="9/04/2018">
+<meta name="author" content="9/16/2018">
 <title>Software Engineering</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -435,71 +435,100 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Software Engineering</h1>
 <div class="details">
-<span id="author" class="author">9/04/2018</span><br>
+<span id="author" class="author">9/16/2018</span><br>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_topics_in_computer_vision">Topics in Computer Vision</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><a href="mailto:we@cs.ccny.cuny.edu">we@cs.ccny.cuny.edu</a>
-subject: 322
-== Project Suggestions:
-1. Same topic for every team
-2. mini-amazon, ebay, stock market, bidding, pizza/chinese food order/delivery system.
-Dynamic Programming (DP): Find optimal route (for food delivery example).</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><span class="underline">Image Processing</span> (low-level): image &#8594; image</p>
+</li>
+<li>
+<p><span class="underline">Computer Vision</span> (high-level): image &#8594; identity</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Example: Face Recognition&#8201;&#8212;&#8201;AI</p>
+</li>
+<li>
+<p>Viola-Jones: 2002+- very precise</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><span class="underline">Computer Graphics</span></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Pure artificial: human made</p>
+</li>
+<li>
+<p>Solved: math/diff. geometry (GAUSS)</p>
+</li>
+<li>
+<p>Tensor: more generalizd concept over vector</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_week_2">Week 2</h2>
+<h2 id="_lifecycle_models">Lifecycle Models</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+WILL BE ON QUIZ
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
-<h3 id="_stream_data_processing">Stream data processing</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Stream data processing</dt>
-<dd>
-<p>Big data.</p>
-</dd>
-<dt class="hdlist1">Data Stream</dt>
-<dd>
-<p>A small river, always flowing, never stopping.</p>
-</dd>
-</dl>
-</div>
+<h3 id="_people_involved_in_lifecycle_concept">People Involved in Lifecycle Concept:</h3>
 <div class="paragraph">
-<div class="title">Ex 1</div>
-<p>We have 1 sensor which will measure the temperature every 0.01 sec. What is the average temperature?</p>
-</div>
-<div class="paragraph">
-<p>If we store every data point, there are too many. One array to store them all is O(n) space complexity.</p>
-</div>
-<div class="paragraph">
-<p>Efficient solution:
-1. mean value so far: <code>mu</code>
-2. count # of data points already processed: <code>cnt</code></p>
+<p>Sometimes are the same, its just that every year there is a new fancy way to say the same thing</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>t0: <code>mu = T(t0); cnt = 1 # Initialize 2 vars</code></p>
+<p>Coder, tester, hacker (positive sense, ethics)</p>
 </li>
 <li>
-<p>t1: <code>mu=(T(0) + T(1) / 2; cnt = 2</code></p>
+<p>Software analysis engineer (analyzer)</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Software development engineer (coder)</p>
 </li>
 <li>
-<p>tn</p>
+<p>Software verification engineer (noble tester)</p>
+</li>
+<li>
+<p>Full-Stack Software Engineer (programmer)</p>
 </li>
 </ol>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_steps_in_lifecycle_model">Steps In Lifecycle Model</h3>
 <div class="paragraph">
-<p><code>new_param = old_param + diff / cnt</code>
-<code>new_param = old_param + diff * eta</code> where <code>eta = 1/cnt</code>
-In machine learning, <code>eta</code> is the learning factor. King parameter updating formula.</p>
+<div class="title">Estimation &amp; Planning</div>
+<p>$$$ + People + &#8230;&#8203; : Cost</p>
+</div>
+<div class="paragraph">
+<div class="title">Design</div>
+<p>Software System Design Has 2 Levels</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -508,154 +537,172 @@ In machine learning, <code>eta</code> is the learning factor. King parameter upd
 <div class="title">Note</div>
 </td>
 <td class="content">
-Move this above the efficient solution part
-What is the objective of statistics? Small number of stats/parameters to indicate the data. There&#8217;s too much raw data to store it all.
+MAY BE ON QUIZ
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>If the distribution is Gaussian, all we need to store is the mean and the std.</p>
-</div>
-<div class="paragraph">
-<p>Mean/median: typical value</p>
-</div>
-<div class="paragraph">
-<p>Bayesian learning: natural human learning process.</p>
-</div>
-<div class="paragraph">
-<p>Deep learning, <code>eta = 0.001</code>, never 0.</p>
-</div>
-<div class="paragraph">
-<p>In software engineering, we need to build systems that can evolve. For example, a program that states the president is Obama will be outdated now that Trump is president. Hard-coding is not the right thing to do.</p>
-</div>
-<div class="paragraph">
-<p>Before Obama&#8217;s presidency, searching Google for <code>obama</code> would return <code>a small town in Japan.</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Ex 2 (medium-level difficulty)</div>
-<p>N customers, numbered uniquely from 1 - N, where N is extremely large.
-Make some coupon/rewards. 1 customer can only have 1 reward. Assume every customer is honest, no double dips. Assume one customer never claims his/her reward. How do you identify the missing customer?</p>
-</div>
-<div class="paragraph">
-<p>Constraint: N - 1 already claimed.</p>
-</div>
-<div class="paragraph">
-<p>DS + Alg approach is good for small data, but rarely good for big data.</p>
-</div>
-<div class="paragraph">
-<p>The solution should be simple and elegant. Never use O(n) space.</p>
-</div>
-<div class="paragraph">
-<p>Hint: use simple math.</p>
-</div>
-<div class="paragraph">
-<p>Solution: <code>1 + 2 + &#8230;&#8203; + N = N(N+1)/2</code>
-Sum total of all customers who already came.
-sum = 0
-sum += id</p>
-</div>
-<div class="paragraph">
-<p><code>N(N + 1) / 2 - cust_sum = missing id</code></p>
-</div>
-<div class="paragraph">
-<p>Famous algorithm in big data. Time complexity is O(1).</p>
-</div>
-<div class="paragraph">
-<div class="title">Ex 3</div>
-<p>Like Ex 2, but&#8230;&#8203;
-2 customers never come.</p>
-</div>
-<div class="paragraph">
-<p>Do everything as before, now
-<code>N(N + 1) / 2 - cust_sum = sum of 2 missing ids</code></p>
-</div>
-<div class="paragraph">
-<p>You can&#8217;t find the original ids from their sum.
-Bose-Einstein statistics:: x + y + z + w = 1000, tells us how many unique vectors satisfy. It&#8217;s huge.</p>
-</div>
-<div class="paragraph">
-<p>We have two unknowns, only 1 equation. So, we need another equation.
-`1^2 + 2^2 + &#8230;&#8203; + n^2</p>
-</div>
-<div class="paragraph">
-<p>This is scalable. If we have k customers who skip a reward, then we can do</p>
-</div>
-<div class="paragraph">
-<p>sum_1 += id
-sum_2 += id^2
-sum_3 += id^3
-&#8230;&#8203;
-sum_k += id^k</p>
-</div>
-<div class="paragraph">
-<p>These are all fixed, so O(1).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_the_role_of_math_in_s_e">The Role of Math in S.E.</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Linear algebra: Eigenvector / eigen value  (Google&#8217;s pagerank)</p>
+<p>Low Level: data structure + algorithm/logic</p>
 </li>
 <li>
-<p>Calculus: Taylor series</p>
-</li>
-<li>
-<p>Machine learning: Gradient Descent</p>
-</li>
-<li>
-<p>Back propagation: Just the chain rule</p>
+<p>High Level: # of modules, relationship between modules&#8212;&#8203;architectural design</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Can use gradient descent or ascent for local min/max. It&#8217;s a greedy algorithm because you might not reach the absolute maximum.</p>
-</div>
-<div class="paragraph">
-<p>Solution? Random sampling. Start from different points and choose the best.</p>
-</div>
-<div class="paragraph">
-<p>Monte-Carlo randomization. Do it randomly many times.</p>
+<div class="title">Implementation</div>
+<p>Coding + Debugging</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Classical statistics: based on frequencies</p>
+<p><strong>Debugging</strong> is done on your own.</p>
 </li>
 <li>
-<p>Bayesian statistics: Update knowledge based on new evidence. "Let data speak". Foundation of computer science.</p>
+<p>GOAL: Make sure logically working</p>
 </li>
 </ol>
 </div>
-<div class="dlist">
-<div class="title">Probability vs Statistics?</div>
-<dl>
-<dt class="hdlist1">Probability</dt>
-<dd>
-<p>Theoretical. Kolomogorov&#8217;s 3 axioms. It&#8217;s a mathematical topic.</p>
-</dd>
-<dt class="hdlist1">Statistics</dt>
-<dd>
-<p>Applied field. Inverse of probability. Induction from small data. Get knowledge from experience/controlled test.</p>
 <div class="paragraph">
-<p>For example, A/B testing. They roll out different GUIs to different users.</p>
-</div>
-</dd>
-</dl>
+<div class="title">Testing</div>
+<p>Should be done by a different party, anyone other than yourself OR
+(not recommended) yourself but only after a given time</p>
 </div>
 <div class="paragraph">
-<p>Science vs non-science?
-Science is reproducible and falsifiable. There are no miracles. Double-blind testing: Fisher 1930s came up with this to test if a certain product is effective. This is why life span has increased.</p>
+<p><span class="underline">Different Types of Testing in the Industry</span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><span class="underline">Alpha</span>: Tested by insiders</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Problem: More generous, not too harsh</p>
+</li>
+<li>
+<p>Paid individuals in another department or company hired</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><span class="underline">Beta</span>: Tested by outsiders</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Pros: More objective</p>
+</li>
+<li>
+<p>Time line will vary. Can take days, months, decades, centuries&#8230;&#8203;</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><span class="underline">A/B Testing</span>: 5% of users are chosen to test new GUI/features</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Used/Abused by big companies like Google, FB, Amazon, etc.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Testing != Debugging
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<div class="title">Maintenance &amp; Evolution</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Maintenance is delivered by customer service</p>
+</li>
+<li>
+<p>Create different versions (control)</p>
+</li>
+</ol>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_case_computer_aided_software_engineering">CASE (<strong>C</strong>omputer <strong>A</strong>ided <strong>S</strong>oftware <strong>E</strong>ngineering)</h2>
+<div class="sectionbody">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In every phase of development</p>
+</li>
+<li>
+<p>Smart editor</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>git</p>
+</li>
+<li>
+<p>gitlab (linux)</p>
+</li>
+<li>
+<p>make
+Smart compiling for large systems &#8594; automated activity</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Revision Control</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Ex. Tensor Flow: CASE for machine learning in Google</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_types_of_people">3 Types of People:</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Developers</p>
+</li>
+<li>
+<p>Users</p>
+</li>
+<li>
+<p>Clients (ppl w/ $$$)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">5457</div>
+<p>+
+IMPORTANT: Software Engineers != Coders</p>
+</div>
+<hr>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-26 15:23:57 EDT
+Last updated 2018-09-26 16:50:38 EDT
 </div>
 </div>
 </body>

@@ -1,0 +1,95 @@
+= Software Engineering
+9/16/2018
+
+== Topics in Computer Vision
+1. [.underline]#Image Processing# (low-level): image -> image
+2. [.underline]#Computer Vision# (high-level): image -> identity
++
+a. Example: Face Recognition -- AI
++
+b. Viola-Jones: 2002+- very precise
+3. [.underline]#Computer Graphics#
++
+a. Pure artificial: human made
++
+b. Solved: math/diff. geometry (GAUSS)
++
+c. Tensor: more generalizd concept over vector
+
+
+== Lifecycle Models
+NOTE: WILL BE ON QUIZ
+
+=== People Involved in Lifecycle Concept:
+Sometimes are the same, its just that every year there is a new fancy way to say the same thing
+
+1. Coder, tester, hacker (positive sense, ethics)
+2. Software analysis engineer (analyzer)
+3. Software development engineer (coder)
+4. Software verification engineer (noble tester)
+5. Full-Stack Software Engineer (programmer)
+
+=== Steps In Lifecycle Model
+
+.Estimation & Planning
+$$$ + People + ... : Cost
+
+.Design
+Software System Design Has 2 Levels
+
+NOTE: MAY BE ON QUIZ
+
+1. Low Level: data structure + algorithm/logic
+2. High Level: # of modules, relationship between modules--architectural design
+
+.Implementation
+Coding + Debugging
+
+. *Debugging* is done on your own.
+. GOAL: Make sure logically working
+
+.Testing
+Should be done by a different party, anyone other than yourself OR
+(not recommended) yourself but only after a given time
+
+[.underline]#Different Types of Testing in the Industry#
+
+1. [.underline]#Alpha#: Tested by insiders
+  a. Problem: More generous, not too harsh
+  b. Paid individuals in another department or company hired
+
+2. [.underline]#Beta#: Tested by outsiders
+  a. Pros: More objective
+  b. Time line will vary. Can take days, months, decades, centuries...
+
+3. [.underline]#A/B Testing#: 5% of users are chosen to test new GUI/features
+  a. Used/Abused by big companies like Google, FB, Amazon, etc.
+
+IMPORTANT: Testing != Debugging
+
+.Maintenance & Evolution
+a. Maintenance is delivered by customer service
+b. Create different versions (control)
+
+
+== CASE (**C**omputer **A**ided **S**oftware **E**ngineering)
+a. In every phase of development
+b. Smart editor
+  1. git
+  2. gitlab (linux)
+  3. make
+    Smart compiling for large systems -> automated activity
+c. Revision Control
+
+Ex. Tensor Flow: CASE for machine learning in Google
+
+
+== 3 Types of People:
+1. Developers
+2. Users
+3. Clients (ppl w/ $$$)
+
+IMPORTANT: Software Engineers != Coders
+
+
+'''
