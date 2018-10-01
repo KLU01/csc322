@@ -1,0 +1,51 @@
+= Software Engineering
+10/01/2018
+
+Moving Target:: Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different. +
+They have no idea whether the moved objective is very small or big. 
+
+.CS Project Vs. Traditional Engineering
+Which is harder?
+
+Software engineering is harder b/c there is a lack of visualization. It's hard to justify our efforts. +
+Hard to communicate with clients/bosses +
+Dev vs clients - they are in a whole different world. They don't know CS, math, or anything. Instructions can be ambiguous.
+
+Mutual Misunderstanding::
+
+Ex:: One lady - "I had a lamb." +
+.Possible meanings:
+1. Ate the lamb meat
+2. Owned/held a lamb in the past
+3. Owned an expensive car (slang)
+4. A very nice husband/bf
+
+.Chinese vs Japanese
+Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows <20% japanese.
+
+.Solution to Mutual Misunderstandings
+0. Possibly with more Natural Language, but this might invite more confusion.
+1. Math: Universal language, nail down the details.
+2. Diagrams: many diagrams. 1 pic = 1000 words.
+3. Small model/prototype: Clients can see/visualize and provide informed feedback.
+
+.Why is Software Engineering so difficult from other engineering disciplines?
+ANSWER:: LACK OF VISUALIZATION ( will appear on quiz )
+
+.Quiz/Exam Structure
+1. Concepts: Be concise, but don't be too concise. These are 2pts, don't write 2 pages worth of stuff.
+2. Figures/Diagrams
+3. Figures/Diagrams or some design
+4. Software Design/Coding: Easy/Medium difficulty. +
+Make answer efficient `O(nlogn)`, not `O(n^2^)`.
+
+.Software Engineering Goals
+1. User-friendly: Easy to use by users (ex: Apple iOS)
+2. Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.
+
+.How to make code understandable
+1. Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does. +
+Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.
+2. Beautify your code. Python forces you to do this.
+3. Naming conventions - make name of functions and variables meaningful.
+4. Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc. 

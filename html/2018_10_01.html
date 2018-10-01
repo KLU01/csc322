@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="8/26/2018">
+<meta name="author" content="10/01/2018">
 <title>Software Engineering</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -435,156 +435,135 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Software Engineering</h1>
 <div class="details">
-<span id="author" class="author">8/26/2018</span><br>
+<span id="author" class="author">10/01/2018</span><br>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>www-cs.ccny.cuny.edu/~csjie/322.html</p>
-</div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Fair grading</dt>
+<dt class="hdlist1">Moving Target</dt>
 <dd>
-<p>based on gap-classification.</p>
-</dd>
-<dt class="hdlist1">SVM (support vector machine)</dt>
-<dd>
-<p>1-layer shallow NN</p>
+<p>Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different.<br>
+They have no idea whether the moved objective is very small or big.</p>
 </dd>
 </dl>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_time_complexity">Time Complexity</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>n = 1 billion</p>
+<div class="title">CS Project Vs. Traditional Engineering</div>
+<p>Which is harder?</p>
 </div>
 <div class="paragraph">
-<p><code>log n 9</code>
-<code>log 9</code></p>
-</div>
-<div class="paragraph">
-<p>&#8656; <code>O(n^3)</code> computable</p>
+<p>Software engineering is harder b/c there is a lack of visualization. It&#8217;s hard to justify our efforts.<br>
+Hard to communicate with clients/bosses<br>
+Dev vs clients - they are in a whole different world. They don&#8217;t know CS, math, or anything. Instructions can be ambiguous.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>O(1)</code></dt>
+<dt class="hdlist1">Mutual Misunderstanding</dt>
+<dt class="hdlist1">Ex</dt>
 <dd>
-<p>Constant</p>
-<div class="paragraph">
-<p>Hashing is O ( log log n) ) because has to check and avoid conflicts.</p>
-</div>
-</dd>
-<dt class="hdlist1"><code>O(log n)</code></dt>
-<dd>
-<p>Binary/dictionary search</p>
-</dd>
-<dt class="hdlist1"><code>O(n ^ x)</code></dt>
-<dd>
-<p>Where x &lt; 1&#8201;&#8212;&#8201;sublinear
-<code>O(n)</code></p>
-</dd>
-<dt class="hdlist1"><code>O(n^2)</code></dt>
-<dd>
-<p>GUILTY</p>
-</dd>
-<dt class="hdlist1"><code>O(n^3)</code></dt>
-<dd>
-<p>CRIMINAL</p>
-</dd>
-<dt class="hdlist1">time</dt>
-<dd>
-<p>cpu/GPU: run deep learning</p>
-<div class="paragraph">
-<p>size of input data(n)</p>
-</div>
-</dd>
-<dt class="hdlist1">space</dt>
-<dd>
-<p>size of space to be used</p>
-<div class="paragraph">
-<p>Big data volume is huge</p>
+<p>One lady - "I had a lamb."<br></p>
+<div class="olist arabic">
+<div class="title">Possible meanings:</div>
+<ol class="arabic">
+<li>
+<p>Ate the lamb meat</p>
+</li>
+<li>
+<p>Owned/held a lamb in the past</p>
+</li>
+<li>
+<p>Owned an expensive car (slang)</p>
+</li>
+<li>
+<p>A very nice husband/bf</p>
+</li>
+</ol>
 </div>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>time + space = efficiency</p>
-</div>
-<div class="paragraph">
-<p>Kolmogorov (sometimes Chaitin) complexity is the size of the program. It&#8217;s about understandability. Shorter program is easier to understand. More important in theoretical computer science. Make sure your code is short as possible and understandable as possible to peer programmers.</p>
-</div>
-<div class="paragraph">
-<p>Be concise when you code.</p>
+<div class="title">Chinese vs Japanese</div>
+<p>Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows &lt;20% japanese.</p>
 </div>
 <div class="olist arabic">
-<div class="title">THREE COMPLEXITIES:</div>
+<div class="title">Solution to Mutual Misunderstandings</div>
 <ol class="arabic">
 <li>
-<p>time</p>
+<p>Possibly with more Natural Language, but this might invite more confusion.</p>
 </li>
 <li>
-<p>space</p>
+<p>Math: Universal language, nail down the details.</p>
 </li>
 <li>
-<p>kolmogorov</p>
+<p>Diagrams: many diagrams. 1 pic = 1000 words.</p>
+</li>
+<li>
+<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
 </li>
 </ol>
 </div>
-<hr>
-<div class="paragraph">
-<p>Chunk swapping problem:</p>
-</div>
-<div class="paragraph">
-<p>input: 1 2 3 4 5
-output: 4 5 1 2 3</p>
-</div>
-<div class="paragraph">
-<p>How to do this? 3 ways:</p>
+<div class="dlist">
+<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
+<dl>
+<dt class="hdlist1">ANSWER</dt>
+<dd>
+<p>LACK OF VISUALIZATION ( will appear on quiz )</p>
+</dd>
+</dl>
 </div>
 <div class="olist arabic">
+<div class="title">Quiz/Exam Structure</div>
 <ol class="arabic">
 <li>
-<p>Switching. But this is messy, non scalable.</p>
+<p>Concepts: Be concise, but don&#8217;t be too concise. These are 2pts, don&#8217;t write 2 pages worth of stuff.</p>
 </li>
 <li>
-<p>Create new space/array: clean and easy to understand, but space is <code>O(n)</code></p>
+<p>Figures/Diagrams</p>
 </li>
 <li>
-<p>Use a data structure like circular linked list to shift left.</p>
-<div class="paragraph">
-<p>space: <code>O(1)</code></p>
-</div>
-<div class="paragraph">
-<p>time: <code>2n</code>, or <code>O(n)</code></p>
-</div>
+<p>Figures/Diagrams or some design</p>
 </li>
 <li>
-<p>Have a linked list. Change the head pointer, the tail pointer, break the link for the new head, and attach a new link from the old tail to the old head.</p>
-<div class="paragraph">
-<p>time: <code>O(1)</code>; only 4 links</p>
-</div>
-<div class="paragraph">
-<p>space: each data item add one link/flag; <code>O(n)</code></p>
-</div>
+<p>Software Design/Coding: Easy/Medium difficulty.<br>
+Make answer efficient <code>O(nlogn)</code>, not <code>O(n<sup>2</sup>)</code>.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Program = data structure + algorithm
-No free lunch theorem&#8201;&#8212;&#8201;you might have concise space usage, but then the time complexity will be bigger. You can write a super fast algorithm, but then it will probably use more space.</p>
+<div class="olist arabic">
+<div class="title">Software Engineering Goals</div>
+<ol class="arabic">
+<li>
+<p>User-friendly: Easy to use by users (ex: Apple iOS)</p>
+</li>
+<li>
+<p>Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.</p>
+</li>
+</ol>
 </div>
-</div>
+<div class="olist arabic">
+<div class="title">How to make code understandable</div>
+<ol class="arabic">
+<li>
+<p>Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does.<br>
+Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.</p>
+</li>
+<li>
+<p>Beautify your code. Python forces you to do this.</p>
+</li>
+<li>
+<p>Naming conventions - make name of functions and variables meaningful.</p>
+</li>
+<li>
+<p>Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.</p>
+</li>
+</ol>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-29 16:05:09 EDT
+Last updated 2018-10-01 15:15:44 EDT
 </div>
 </div>
 </body>
