@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="10/01/2018">
-<title>Software Engineering</title>
+<meta name="author" content="10/03/2018">
+<title>Software Engineeringe</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -433,137 +433,226 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Software Engineering</h1>
+<h1>Software Engineeringe</h1>
 <div class="details">
-<span id="author" class="author">10/01/2018</span><br>
+<span id="author" class="author">10/03/2018</span><br>
 </div>
 </div>
 <div id="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Moving Target</dt>
-<dd>
-<p>Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different.<br>
-They have no idea whether the moved objective is very small or big.</p>
-</dd>
-</dl>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Quiz (Monday, October 15)
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<div class="title">CS Project Vs. Traditional Engineering</div>
-<p>Which is harder?</p>
+<p><strong>Recommended Reading: The Art of Computer Programming by Knuth</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_top_3_most_important_algorithms">Top 3 Most Important Algorithms</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Binary/Dictionary Search</p>
+</li>
+<li>
+<p>Hashing O(1)</p>
+</li>
+<li>
+<p>Merge Sort / Quicksort / FFT (Fast Fourier Transform)</p>
+</li>
+<li>
+<p>DFT (Discrete Fourier Transform) <code>O(n^2)</code>, 1965</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Time Complexity</div>
+<ul>
+<li>
+<p>Binary Search <code>O(log n)</code></p>
+</li>
+<li>
+<p>Quicksort <code>O(n log n)</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Software engineering is harder b/c there is a lack of visualization. It&#8217;s hard to justify our efforts.<br>
-Hard to communicate with clients/bosses<br>
-Dev vs clients - they are in a whole different world. They don&#8217;t know CS, math, or anything. Instructions can be ambiguous.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Mutual Misunderstanding</dt>
-<dt class="hdlist1">Ex</dt>
-<dd>
-<p>One lady - "I had a lamb."<br></p>
-<div class="olist arabic">
-<div class="title">Possible meanings:</div>
-<ol class="arabic">
-<li>
-<p>Ate the lamb meat</p>
-</li>
-<li>
-<p>Owned/held a lamb in the past</p>
-</li>
-<li>
-<p>Owned an expensive car (slang)</p>
-</li>
-<li>
-<p>A very nice husband/bf</p>
-</li>
-</ol>
-</div>
-</dd>
-</dl>
+<div class="title">Prove: (Master Theorem)</div>
+<p><span class="underline">Binary Search</span></p>
 </div>
 <div class="paragraph">
-<div class="title">Chinese vs Japanese</div>
-<p>Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows &lt;20% japanese.</p>
+<p>T(n): a function of input data size n<br>
+<code>T(n) = 1 + T(n / 2)</code> #Formulate DE (Differential Equation<br>
+<code>= 1 + 1 + T(n / 4)</code><br>
+<code>= 1 + 1 + 1 + T(n / 8)</code><br>
+<code>= k + T(n / (2^k))</code> # Reasonable logic jump<br>
+<code>= log n + T(n / (2^ (log_2_n) ) )</code><br>
+<code>= log n + T(1)</code><br>
+<code>= log n</code></p>
+</div>
+<div class="paragraph">
+<p><span class="underline">NO IDEA WHAT ALGORITHM BUT&#8230;&#8203;</span></p>
+</div>
+<div class="paragraph">
+<p><code>T(n) = 1 + T(n - 1)</code> #Formulate DE (Differential Equation<br>
+<code>= 1 + 1 + T(n - 2)</code><br>
+<code>= k + T(n - k)</code>  # Reasonable logic jump<br>
+<code>= n + T(0)</code><br>
+<code>= n</code></p>
 </div>
 <div class="olist arabic">
-<div class="title">Solution to Mutual Misunderstandings</div>
+<div class="title">Steps:</div>
 <ol class="arabic">
 <li>
-<p>Possibly with more Natural Language, but this might invite more confusion.</p>
+<p>Formulate recursive difference equation</p>
 </li>
 <li>
-<p>Math: Universal language, nail down the details.</p>
-</li>
-<li>
-<p>Diagrams: many diagrams. 1 pic = 1000 words.</p>
-</li>
-<li>
-<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
+<p>Expand + observe to find function of n (FT/z - transform/generation function to solve)</p>
 </li>
 </ol>
 </div>
-<div class="dlist">
-<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
-<dl>
-<dt class="hdlist1">ANSWER</dt>
-<dd>
-<p>LACK OF VISUALIZATION ( will appear on quiz )</p>
-</dd>
-</dl>
 </div>
-<div class="olist arabic">
-<div class="title">Quiz/Exam Structure</div>
-<ol class="arabic">
-<li>
-<p>Concepts: Be concise, but don&#8217;t be too concise. These are 2pts, don&#8217;t write 2 pages worth of stuff.</p>
-</li>
-<li>
-<p>Figures/Diagrams</p>
-</li>
-<li>
-<p>Figures/Diagrams or some design</p>
-</li>
-<li>
-<p>Software Design/Coding: Easy/Medium difficulty.<br>
-Make answer efficient <code>O(nlogn)</code>, not <code>O(n<sup>2</sup>)</code>.</p>
-</li>
-</ol>
 </div>
-<div class="olist arabic">
-<div class="title">Software Engineering Goals</div>
-<ol class="arabic">
+<div class="sect1">
+<h2 id="_coding">Coding</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
 <li>
-<p>User-friendly: Easy to use by users (ex: Apple iOS)</p>
+<p>Add more comments</p>
 </li>
 <li>
-<p>Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.</p>
+<p>Assert / consider test cases</p>
 </li>
-</ol>
+<li>
+<p>Reliable / robust: be defensive: worry about OS, internet users' input
+Example:
+age = input("Your age:")
+vs.
+age = input("Your age (WARNING: integer, &gt; 10, &lt; 200): ") #Shift burden to users</p>
+</li>
+</ul>
 </div>
-<div class="olist arabic">
-<div class="title">How to make code understandable</div>
-<ol class="arabic">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_maintenance">Maintenance</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
 <li>
-<p>Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does.<br>
-Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.</p>
+<p><span class="underline">SQA</span> System Quality Assurance (team of 50-60 Toyota)</p>
 </li>
 <li>
-<p>Beautify your code. Python forces you to do this.</p>
+<p>invented by American engineer that was hired / adopted by Japanese</p>
 </li>
 <li>
-<p>Naming conventions - make name of functions and variables meaningful.</p>
+<p>Specification of all phases: SQA has final</p>
 </li>
 <li>
-<p>Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.</p>
+<p>Independent, objective, powerful</p>
 </li>
-</ol>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pros_cons_of_waterfall_model">Pros &amp; Cons of Waterfall Model</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Advantage:</div>
+<ul>
+<li>
+<p>Better organization / principles</p>
+</li>
+<li>
+<p>Strict rules to proceed</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Disadvantage:</div>
+<ul>
+<li>
+<p>Slow / Time consuming</p>
+</li>
+<li>
+<p>lack of visualization</p>
+</li>
+<li>
+<p>inflexible</p>
+</li>
+<li>
+<p>lack of communication between customer, developer, testers, designers</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prototyping">Prototyping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Build system quickly containing the major features (no minor details)
+Reflect main functionality
+Scripting / Prototyping language (python&#8212;&#8203;advantage coding numpy-- + sql)</p>
+</div>
+<div class="ulist">
+<div class="title">Cons</div>
+<ul>
+<li>
+<p>May not reflect all crucial features</p>
+</li>
+<li>
+<p>Not lone model</p>
+</li>
+<li>
+<p>More chance of moving targets</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Pros</div>
+<ul>
+<li>
+<p>Improve timely communication among many parties</p>
+</li>
+<li>
+<p>Better feedback &#8594; Ensure right direction</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fast_prototyping_fp">Fast Prototyping (FP)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Not running alone
+Associated with other life cycle</p>
+</div>
+<div class="paragraph">
+<div class="title">Artist Rendering</div>
+<p>FP receive better / more meaningful feedback</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-05 00:50:53 EDT
+Last updated 2018-10-05 00:50:39 EDT
 </div>
 </div>
 </body>
