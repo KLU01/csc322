@@ -2,7 +2,7 @@
 10/01/2018
 
 Moving Target:: Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different. +
-They have no idea whether the moved objective is very small or big. 
+They have no idea whether the moved objective is very small or big.
 
 .CS Project Vs. Traditional Engineering
 Which is harder?
@@ -24,10 +24,10 @@ Ex:: One lady - "I had a lamb." +
 Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows <20% japanese.
 
 .Solution to Mutual Misunderstandings
-0. Possibly with more Natural Language, but this might invite more confusion.
-1. Math: Universal language, nail down the details.
-2. Diagrams: many diagrams. 1 pic = 1000 words.
-3. Small model/prototype: Clients can see/visualize and provide informed feedback.
+1. Possibly with more Natural Language, but this might invite more confusion.
+2. Math: Universal language, nail down the details.
+3. Diagrams: many diagrams. 1 pic = 1000 words.
+4. Small model/prototype: Clients can see/visualize and provide informed feedback.
 
 .Why is Software Engineering so difficult from other engineering disciplines?
 ANSWER:: LACK OF VISUALIZATION ( will appear on quiz )
@@ -48,4 +48,4 @@ Make answer efficient `O(nlogn)`, not `O(n^2^)`.
 Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.
 2. Beautify your code. Python forces you to do this.
 3. Naming conventions - make name of functions and variables meaningful.
-4. Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc. 
+4. Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.

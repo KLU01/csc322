@@ -1,0 +1,90 @@
+= Software Engineeringe
+10/03/2018
+
+IMPORTANT: Quiz (Monday, October 15)
+
+*Recommended Reading: The Art of Computer Programming by Knuth*
+
+== Top 3 Most Important Algorithms
+- Binary/Dictionary Search
+- Hashing O(1)
+- Merge Sort / Quicksort / FFT (Fast Fourier Transform)
+  - DFT (Discrete Fourier Transform) `O(n^2)`, 1965
+
+.Time Complexity
+- Binary Search `O(log n)`
+- Quicksort `O(n log n)`
+
+.Prove: (Master Theorem)
+[.underline]#Binary Search#
+
+T(n): a function of input data size n +
+`T(n) = 1 + T(n / 2)` #Formulate DE (Differential Equation +
+`= 1 + 1 + T(n / 4)` +
+`= 1 + 1 + 1 + T(n / 8)` +
+`= k + T(n / (2^k))` # Reasonable logic jump +
+`= log n + T(n / (2^ (log_2_n) ) )` +
+`= log n + T(1)` +
+`= log n`
+
+[.underline]#NO IDEA WHAT ALGORITHM BUT...#
+
+`T(n) = 1 + T(n - 1)` #Formulate DE (Differential Equation +
+`= 1 + 1 + T(n - 2)` +
+`= k + T(n - k)`  # Reasonable logic jump +
+`= n + T(0)` +
+`= n`
+
+.Steps:
+1. Formulate recursive difference equation
+2. Expand + observe to find function of n (FT/z - transform/generation function to solve)
+
+== Coding
+- Add more comments
+- Assert / consider test cases
+- Reliable / robust: be defensive: worry about OS, internet users' input
+  Example:
+  age = input("Your age:")
+  vs.
+  age = input("Your age (WARNING: integer, > 10, < 200): ") #Shift burden to users
+
+== Maintenance
+- [.underline]#SQA# System Quality Assurance (team of 50-60 Toyota)
+  - invented by American engineer that was hired / adopted by Japanese
+- Specification of all phases: SQA has final
+- Independent, objective, powerful
+
+== Pros & Cons of Waterfall Model
+
+.Advantage:
+- Better organization / principles
+- Strict rules to proceed
+
+.Disadvantage:
+- Slow / Time consuming
+  - lack of visualization
+  - inflexible
+  - lack of communication between customer, developer, testers, designers
+
+== Prototyping
+Build system quickly containing the major features (no minor details)
+Reflect main functionality
+Scripting / Prototyping language (python--advantage coding numpy-- + sql)
+
+.Cons
+- May not reflect all crucial features
+- Not lone model
+- More chance of moving targets
+
+.Pros
+- Improve timely communication among many parties
+- Better feedback -> Ensure right direction
+
+== Fast Prototyping (FP)
+Not running alone
+Associated with other life cycle
+
+.Artist Rendering
+FP receive better / more meaningful feedback
+
+.Lifecycle is general concept. Waterfall is an example of a lifecycle.
