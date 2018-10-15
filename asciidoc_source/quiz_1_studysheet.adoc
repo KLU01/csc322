@@ -1,0 +1,244 @@
+= QUIZ #1 : STUDY SHEET
+
+== Program Complexity
+
+=== THREE COMPLEXITIES
+1. Time +
+* CPU / GPU
+* Time it takes to run program
+2. Space +
+* Size of space necessary to run program
+3. Kolmogorov
+
+.Time + Space = Efficiency
+
+.Program = Data Structure + Algorithm (Low Level)
+Good for small data, but rarely good for big data.
+
+=== Top 3 Most Important Algorithms
+- Binary/Dictionary Search
+- Hashing O(1)
+- Merge Sort / Quicksort / FFT (Fast Fourier Transform)
+  - DFT (Discrete Fourier Transform) `O(n^2)`, 1965
+
+.Time Complexity
+- Binary Search `O(log n)`
+- Quicksort `O(n log n)`
+
+.Prove: (Master Theorem)
+[.underline]#Binary Search#
+
+T(n): a function of input data size n +
+`T(n) = 1 + T(n / 2)` #Formulate DE (Differential Equation +
+`= 1 + 1 + T(n / 4)` +
+`= 1 + 1 + 1 + T(n / 8)` +
+`= k + T(n / (2^k))` # Reasonable logic jump +
+`= log n + T(n / (2^ (log_2_n) ) )` +
+`= log n + T(1)` +
+`= log n`
+
+Practice:: Chunk Swapping Problem: Swap a set of numbers
+
+== BIG DATA
+.What is big data?
+1. Size: large +
+2. Fast: continuous stream of real-time sensors +
+3. Modalities: Data of different natures
+
+== DEVELOPMENT OF PROGRAMMING LANGUAGES
+
+=== 4 Generations of Programming Languages
+1. Binary
+2. Assembly
+3. Procedural
+4. Object-Oriented
+
+*Most Important Feature of an Object-Oriented Language :* Inheritance +
+Why? +
+1. Re-usability
+2. Understandable
+3. User-Friendly
+
+=== Three Paradigms
+1. Imperative +
+* All programming languages (python, java, etc.)
+2. Functional +
+* Function = 1st class object--passed as argument
+* No loops, all recursion
+* No side effects b/c assignment disallowed--avoids changing-state & mutable data
+* Lazy evaluation (good)
+* Lisp, Haskell, Scheme, Scala
+* Big Data
+3. Logical Programming
+* Prolog : hard to use for large problems
+
+== 3 Types of People
+1. Developers
+2. Users
+3. Clients (ppl w/$$$)
+
+== Software Engineering
+
+.Software Engineering Goals
+1. User-friendly: Easy to use by users
+2. Understandable: Easy to understand by your peers, boss, code reviewer, colleagues, yourself in the future.
+3. Reliable / Robust : Be defensive
+4. Assert / Consider test cases
+
+.How to Make Code Understandable
+1. Comments, lots of them.
+2. Beautify your code.
+3. Naming conventions - make name of functions and variables meaningful.
+4. Write clean/smart logic. This is more subjective.
+
+.Why is Software Engineering so difficult from other engineering disciplines?
+ANSWER:: LACK OF VISUALIZATION +
+Hard to communicate with clients/bosses
+
+.Solution to Mutual Misunderstandings
+1. Possibly with more Natural Language, but this might invite more confusion.
+2. Math: Universal language, nail down the details.
+3. Diagrams
+4. Small model/prototype: Clients can see/visualize and provide informed feedback.
+
+== LIFE CYCLE MODEL
+Steps to proceed in a software system development to go forward and backwards.
+
+=== Waterfall (Proper Bridge Building)
+A sequential design process in which progress moves through phases of:
+
+1. *Estimation & Planning* +
+* Field work -- System Analysis (Needs, Budget, Personnel
+2. *Design* +
+* Low Level: Data Structure + Algorithm +
+* High Level: # of modules, relationship btwn modules--architectural design +
+3. *Implementation* +
+* Build based on design (Coding + Debugging) +
+* [.underline]#Debugging# is done on your own. +
+** Goal: Make sure logically working. +
+4. *Testing* +
+* Stress testing (Different team to unit + integration test)
+
+Different Types of Testing::
+  ** [.underline]#Alpha#: Tested by insiders +
+    *** Problem: More generous, not too harsh
+    *** Paid individuals in another department or company hired
+  ** [.underline]#Beta#: Tested by outsiders +
+    *** Pros: More objective
+    *** Time line will vary. Can take days, months, decades, centuries...
+  ** [.underline]#A/B Testing#: 5% of users are chosen to test new GUI/features +
+    *** Used/Abused by big companies like Google, FB, Amazon, etc.
+IMPORTANT: Testing != Debugging +
+
+5. *Maintenance & Repair (Bug fixes) & Evolution* +
+* Maintenance is delivered by customer service +
+** [.underline]#SQA (System Quality Assurance)# +
+* Create different versions (control)
+6. If beyond repair, retire / destroy.
+
+[.underline]#*Pros:*#
+
+* Better organization / principles
+* Strict rules to proceed
+
+[.underline]#*Cons:*#
+
+* Slow / time consuming
+* Lack of visualization
+* Inflexible
+* Lack of communication btwn customer, developer, testers, designers
+
+=== Rapid Prototyping
+* Build system quickly containing the major features (no minor details)
+* Reflect main functionality
+* Scripting / Prototyping language (python + sql)
+
+[.underline]#*Pros:*#
+
+* Improve timely communication among many parties
+* Better feedback -> Ensure right direction
+
+[.underline]#*Cons:*#
+
+* May not reflect all crucial features
+* Not lone model
+* More chance of *Moving Target*: +
+  In the beginning, users/clients tell you to make something.
+  Once you are near the end, they tell you to do something different.
+
+=== Evolutionary Model
+Iterative and incremental approach
+
+[.underline]#*Pros:*#
+
+* Reduce overall risk for both parties
+* Improved communication
+
+[.underline]#*Cons:*#
+
+* < 5%, fatal problem +
+** Hard to integrate +
+** Revise/revisit large parts of early build +
+** Only applicable to builds are relatively loose coupling
+
+=== Spiral Model
+Waterfall + [.underline]#risk analysis# at the end of every step
+
+* < threshold +
+** DOD : failure rate < 1%
+* Only good for large military/highly political system
+
+== CASE (**C**omputer **A**ided **S**oftware **E**ngineering)
+a. In every phase of development
+b. Smart editor
+  1. git
+  2. gitlab (linux)
+  3. make
+    Smart compiling for large systems -> automated activity
+c. Revision Control
+
+== System Reliability
+Software parts, failure rate
+
+1. Availability in Series +
+  * If one fails, the entire system fails +
+  * Given two parts, x and y, each with a failure rate of 10% in series, the total +
+  failure rate is: `19%`, and success rate of: `81%`. +
+  `A = A_x * A_y` +
+  `.81 = .9 * .9` +
+2. Availability in Parallel +
+  * If both fail, the entire system fails +
+  * If one fails, the system will continue to operate +
+  * Given the same system as before but in parallel, the total failure rate is: `1%`,
+  and success rate of: `99%`. +
+  `A = 1 - (1 - A_x) * (1 - A_y)` +
+  `A = 1 - (1 - A_x)^2` +
+  `.99 = 1 - (1 - .9)^2`
+
+[.underline]#*Pros*# : Safe, rigorous analysis
+
+[.underline]#*Cons*# : Time + $$ consuming (expensive)
+
+== Analyze System (Use Diagram)
+* All possible point of views are exhausted
+* Unified modeling language (UML)
+* SE tools to describe system
+* Use-case diagram is 1st UML
+  ** def system boundary (rectangle)
+  ** def system features/functions (ovals within rectangle)
+  ** def users (ordinary users (left of rectangle), privileged users (right of rectangle))
+  ** def connection between users + functionality
+
+PRACTICE:: Draw a diagram for a library
+
+=== Finite State Machine (FSM)
+- Model logic/algorithm
+- Binary Stream 0, 1, $ (end of stream)
+- Arrow to indicate initial state
+- Double circle to indicate final state
+
+PRACTICE:: Create a FSM to recognize 010 and 101
+
+PRACTICE:: Create a FSM to recognize even binary numbers
+
+PRACTICE:: Create a FSM to recognize binary values `n % 3 = 1`

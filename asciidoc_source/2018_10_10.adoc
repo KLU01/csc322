@@ -1,0 +1,73 @@
+= Software Engineering
+10/10/2018
+
+IMPORTANT: REPORT DUE: Wednesday, October 24
+
+== Software Quality
+Definition:: Measure of the goodness/badness of a software system
+- Usability
+- User Friendly
+- Understandability
+- Satisfy Specification (IMPORTANT b/c Only way to get $$)
+
+== Life Cycle Models
+1. Waterfall
+2. Rapid Prototyping (con: Moving target)
+3. Evolutionary Model +
+* Reduce overall risk for both parties
+* Improved communication
+* < 5%, fatal problem +
+  ** Hard to integrate +
+  ** Revise/revisit large parts of early build +
+  ** Only applicable to builds are relatively loose coupling +
+4. Spiral Model
+* At early stage of waterfall, add [.underline]#risk analysis# at end
+* < threshold +
+  ** DOD : failure rate < 1%
+* Only good for large military/highly political system
+
+=== System Reliability
+Software parts, failure rate
+
+1. Availability in Series +
+  * If one fails, the entire system fails +
+  * Given two parts, x and y, each with a failure rate of 10% in series, the total +
+  failure rate is: `19%`, and success rate of: `81%`. +
+  `A = A_x * A_y` +
+  `.81 = .9 * .9` +
+2. Availability in Parallel +
+  * If both fail, the entire system fails +
+  * If one fails, the system will continue to operate +
+  * Given the same system as before but in parallel, the total failure rate is: `1%`,
+  and success rate of: `99%`. +
+  `A = 1 - (1 - A_x) * (1 - A_y)` +
+  `A = 1 - (1 - A_x)^2` +
+  `.99 = 1 - (1 - .9)^2`
+
+[.underline]#Pros# : Safe, rigorous analysis
+
+[.underline]#Cons# : Time + $$ consuming (expensive)
+
+== Analyze System (Use Diagram)
+* All possible point of views are exhausted
+* Unified modeling language (UML)
+* SE tools to describe system
+* Use-case diagram is 1st UML
+  ** def system boundary (rectangle)
+  ** def system features/functions (ovals within rectangle)
+  ** def users (ordinary users (left of rectangle), privileged users (right of rectangle))
+  ** def connection between users + functionality
+
+PRACTICE:: Draw a diagram for a library
+
+=== Finite State Machine (FSM)
+- Model logic/algorithm
+- Binary Stream 0, 1, $ (end of stream)
+- Arrow to indicate initial state
+- Double circle to indicate final state
+
+PRACTICE:: Create a FSM to recognize 010 and 101
+
+PRACTICE:: Create a FSM to recognize even binary numbers
+
+PRACTICE:: Create a FSM to recognize binary values `n % 3 = 1`
