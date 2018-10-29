@@ -5,7 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>QUIZ #1 : STUDY SHEET</title>
+<meta name="author" content="10/24/2018">
+<title>Software Engineering</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -432,745 +433,186 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>QUIZ #1 : STUDY SHEET</h1>
+<h1>Software Engineering</h1>
+<div class="details">
+<span id="author" class="author">10/24/2018</span><br>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_program_complexity">Program Complexity</h2>
+<h2 id="_charts_to_know">Charts to Know</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_three_complexities">THREE COMPLEXITIES</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Time<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>CPU / GPU</p>
+<p>FSM</p>
 </li>
 <li>
-<p>Time it takes to run program</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Space<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Size of space necessary to run program</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Kolmogorov</p>
+<p>E/R</p>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_entity_relation_diagrams">Entity Relation Diagrams</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<div class="title">Program = Data Structure + Algorithm (Low Level)</div>
-<p>Good for small data, but rarely good for big data.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_top_3_most_important_algorithms">Top 3 Most Important Algorithms</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Binary/Dictionary Search</p>
-</li>
-<li>
-<p>Hashing O(1)</p>
-</li>
-<li>
-<p>Merge Sort / Quicksort / FFT (Fast Fourier Transform)</p>
-</li>
-<li>
-<p>DFT (Discrete Fourier Transform) <code>O(n^2)</code>, 1965</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">Time Complexity</div>
-<ul>
-<li>
-<p>Binary Search <code>O(log n)</code></p>
-</li>
-<li>
-<p>Quicksort <code>O(n log n)</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<div class="title">Prove: (Master Theorem)</div>
-<p><span class="underline">Binary Search</span></p>
-</div>
-<div class="paragraph">
-<p>T(n): a function of input data size n<br>
-<code>T(n) = 1 + T(n / 2)</code> #Formulate DE (Differential Equation<br>
-<code>= 1 + 1 + T(n / 4)</code><br>
-<code>= 1 + 1 + 1 + T(n / 8)</code><br>
-<code>= k + T(n / (2^k))</code> # Reasonable logic jump<br>
-<code>= log n + T(n / (2^ (log_2_n) ) )</code><br>
-<code>= log n + T(1)</code><br>
-<code>= log n</code></p>
+<div class="title">Figure of relationships between mother, father, and child</div>
+<p>image::[]</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Practice</dt>
+<dt class="hdlist1">E/R</dt>
 <dd>
-<p>Chunk Swapping Problem: Swap a set of numbers</p>
+<p>each entity is one table.<br>
+each relation/diamond is one table.</p>
+</dd>
+<dt class="hdlist1">Relational DB</dt>
+<dd>
+<p>Want to reduce redundancies for storage and updating.</p>
 </dd>
 </dl>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_big_data">BIG DATA</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<div class="title">What is big data?</div>
-<ol class="arabic">
-<li>
-<p>Size: large<br></p>
-</li>
-<li>
-<p>Fast: continuous stream of real-time sensors<br></p>
-</li>
-<li>
-<p>Modalities: Data of different natures</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_development_of_programming_languages">DEVELOPMENT OF PROGRAMMING LANGUAGES</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_4_generations_of_programming_languages">4 Generations of Programming Languages</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Binary</p>
-</li>
-<li>
-<p>Assembly</p>
-</li>
-<li>
-<p>Procedural</p>
-</li>
-<li>
-<p>Object-Oriented</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
-<p><strong>Most Important Feature of an Object-Oriented Language :</strong> Inheritance<br>
-Why?<br>
-1. Re-usability
-2. Understandable
-3. User-Friendly</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_three_paradigms">Three Paradigms</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Imperative<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>All programming languages (python, java, etc.)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Functional<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Function = 1st class object&#8212;&#8203;passed as argument</p>
-</li>
-<li>
-<p>No loops, all recursion</p>
-</li>
-<li>
-<p>No side effects b/c assignment disallowed&#8212;&#8203;avoids changing-state &amp; mutable data</p>
-</li>
-<li>
-<p>Lazy evaluation (good)</p>
-</li>
-<li>
-<p>Lisp, Haskell, Scheme, Scala</p>
-</li>
-<li>
-<p>Big Data</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Logical Programming</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Prolog : hard to use for large problems</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_3_types_of_people">3 Types of People</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Developers</p>
-</li>
-<li>
-<p>Users</p>
-</li>
-<li>
-<p>Clients (ppl w/$$$)</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_software_engineering">Software Engineering</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<div class="title">Software Engineering Goals</div>
-<ol class="arabic">
-<li>
-<p>User-friendly: Easy to use by users</p>
-</li>
-<li>
-<p>Understandable: Easy to understand by your peers, boss, code reviewer, colleagues, yourself in the future.</p>
-</li>
-<li>
-<p>Reliable / Robust : Be defensive</p>
-</li>
-<li>
-<p>Assert / Consider test cases</p>
-</li>
-</ol>
-</div>
-<div class="olist arabic">
-<div class="title">How to Make Code Understandable</div>
-<ol class="arabic">
-<li>
-<p>Comments, lots of them.</p>
-</li>
-<li>
-<p>Beautify your code.</p>
-</li>
-<li>
-<p>Naming conventions - make name of functions and variables meaningful.</p>
-</li>
-<li>
-<p>Write clean/smart logic. This is more subjective.</p>
-</li>
-</ol>
+<p>Ex 1 is inefficient because <code>Kids</code> table is redundant. We do not need Kids, because
+they will grow up to become adult men and women over time.</p>
 </div>
 <div class="dlist">
-<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
 <dl>
-<dt class="hdlist1">ANSWER</dt>
+<dt class="hdlist1">Key/index of table/db</dt>
 <dd>
-<p>LACK OF VISUALIZATION<br>
-Hard to communicate with clients/bosses</p>
+<p>A set of attributes that can uniquely identify a tuple/object.</p>
 </dd>
 </dl>
 </div>
-<div class="olist arabic">
-<div class="title">Solution to Mutual Misunderstandings</div>
-<ol class="arabic">
-<li>
-<p>Possibly with more Natural Language, but this might invite more confusion.</p>
-</li>
-<li>
-<p>Math: Universal language, nail down the details.</p>
-</li>
-<li>
-<p>Diagrams</p>
-</li>
-<li>
-<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
-</li>
-</ol>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code>Student:
+  ssn, emplid (key), name, dept, address, college, birthday</code></pre>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_life_cycle_model">LIFE CYCLE MODEL</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Steps to proceed in a software system development to go forward and backwards.</p>
+<p><code>emplid</code> is the index that uniquely identifies student. Not every student is an
+American citizen or has a social security number, so <code>ssn</code> is not good.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Roster / Take:
+  ssn, cin, yr, semester, grade</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As a database designer, we should not introduce any new information. Because, in the
+real world, the data is already big. Don&#8217;t add new data.</p>
+</div>
+<div class="paragraph">
+<p>Do NOT add an artificial ID.</p>
+</div>
+<div class="paragraph">
+<p>For Baseball database, if we cannot find any unique attributes, then it is a WEAK ENTITY.
+Thus, we must borrow from the team (SUPPORT RELATION).</p>
+</div>
+<div class="paragraph">
+<p>A WEAK ENTITY is a double rectangle.</p>
+</div>
+<div class="paragraph">
+<p>A SUPPORT RELATION is a double diamond.</p>
+</div>
+<div class="paragraph">
+<p>Arrow from <code>play</code> to <code>team</code> MUST be <strong>rounded</strong>. because of weak entity relation.</p>
 </div>
 <div class="sect2">
-<h3 id="_waterfall_proper_bridge_building">Waterfall (Proper Bridge Building)</h3>
+<h3 id="_functional_dependency">Functional Dependency</h3>
 <div class="paragraph">
-<p>A sequential design process in which progress moves through phases of:</p>
+<p><code>A &#8594; B</code></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Estimation &amp; Planning</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Field work&#8201;&#8212;&#8201;System Analysis (Needs, Budget, Personnel</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><code>AB &#8594; C</code></p>
 </div>
-</li>
-<li>
-<p><strong>Design</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Low Level: Data Structure + Algorithm<br></p>
-</li>
-<li>
-<p>High Level: # of modules, relationship btwn modules&#8212;&#8203;architectural design<br></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>For any two tuples in data files or DB, if they share the same value on the LHS of the FD,
+then their values on the RHS must be the same.</p>
 </div>
-</li>
-<li>
-<p><strong>Implementation</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Build based on design (Coding + Debugging)<br></p>
-</li>
-<li>
-<p><span class="underline">Debugging</span> is done on your own.<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Goal: Make sure logically working.<br></p>
-</li>
-</ul>
 </div>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_3rd_normal_form">3rd Normal Form</h3>
+<div class="paragraph">
+<p>Industry standard for any database or data structure definition.</p>
 </div>
-</li>
-<li>
-<p><strong>Testing</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Stress testing (Different team to unit + integration test)</p>
+<div class="paragraph">
+<p>For database or class, all non-key attributes are directly determined by the key.</p>
+</div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Different Types of Testing</dt>
+<dt class="hdlist1">Ex</dt>
 <dd>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="underline">Alpha</span>: Tested by insiders<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Problem: More generous, not too harsh</p>
-</li>
-<li>
-<p>Paid individuals in another department or company hired</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><span class="underline">Beta</span>: Tested by outsiders<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: More objective</p>
-</li>
-<li>
-<p>Time line will vary. Can take days, months, decades, centuries&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><span class="underline">A/B Testing</span>: 5% of users are chosen to test new GUI/features<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Used/Abused by big companies like Google, FB, Amazon, etc.
-IMPORTANT: Testing != Debugging<br></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<p><code>ssn, name, dept, dept_name</code></p>
 </dd>
 </dl>
 </div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Maintenance &amp; Repair (Bug fixes) &amp; Evolution</strong><br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Maintenance is delivered by customer service<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="underline">SQA (System Quality Assurance)</span><br></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Create different versions (control)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>If beyond repair, retire / destroy.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>We have a hunch that this is no good. Why? With 3rd normal form, we have a theory.</p>
 </div>
 <div class="paragraph">
-<p><span class="underline"><strong>Pros:</strong></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Better organization / principles</p>
-</li>
-<li>
-<p>Strict rules to proceed</p>
-</li>
-</ul>
+<p>key: ssn<br>
+ssn &#8594; name,<br>
+ssn &#8594; dept,<br>
+dept &#8594; dept_name</p>
 </div>
 <div class="paragraph">
-<p><span class="underline"><strong>Cons:</strong></span></p>
+<p>We have a functional dependency that is not directly determined by ssn.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Slow / time consuming</p>
-</li>
-<li>
-<p>Lack of visualization</p>
-</li>
-<li>
-<p>Inflexible</p>
-</li>
-<li>
-<p>Lack of communication btwn customer, developer, testers, designers</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>This is NOT 3rd Normal Form.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rapid_prototyping">Rapid Prototyping</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Build system quickly containing the major features (no minor details)</p>
-</li>
-<li>
-<p>Reflect main functionality</p>
-</li>
-<li>
-<p>Scripting / Prototyping language (python + sql)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="underline"><strong>Pros:</strong></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Improve timely communication among many parties</p>
-</li>
-<li>
-<p>Better feedback &#8594; Ensure right direction</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="underline"><strong>Cons:</strong></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>May not reflect all crucial features</p>
-</li>
-<li>
-<p>Not lone model</p>
-</li>
-<li>
-<p>More chance of <strong>Moving Target</strong>:<br>
-In the beginning, users/clients tell you to make something.
-Once you are near the end, they tell you to do something different.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_evolutionary_model">Evolutionary Model</h3>
-<div class="paragraph">
-<p>Iterative and incremental approach</p>
-</div>
-<div class="paragraph">
-<p><span class="underline"><strong>Pros:</strong></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Reduce overall risk for both parties</p>
-</li>
-<li>
-<p>Improved communication</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="underline"><strong>Cons:</strong></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&lt; 5%, fatal problem<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Hard to integrate<br></p>
-</li>
-<li>
-<p>Revise/revisit large parts of early build<br></p>
-</li>
-<li>
-<p>Only applicable to builds are relatively loose coupling</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_spiral_model">Spiral Model</h3>
-<div class="paragraph">
-<p>Waterfall + <span class="underline">risk analysis</span> at the end of every step</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&lt; threshold<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>DOD : failure rate &lt; 1%</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Only good for large military/highly political system</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_case_computer_aided_software_engineering">CASE (<strong>C</strong>omputer <strong>A</strong>ided <strong>S</strong>oftware <strong>E</strong>ngineering)</h2>
-<div class="sectionbody">
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>In every phase of development</p>
-</li>
-<li>
-<p>Smart editor</p>
+<h3 id="_1st_normal_form">1st Normal Form</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>git</p>
+<p>No repeated tuples. If it repeats, it is not a DB. it is a data WAREHOUSE.</p>
 </li>
 <li>
-<p>gitlab (linux)</p>
-</li>
-<li>
-<p>make
-Smart compiling for large systems &#8594; automated activity</p>
+<p>Attributes must be atomic and typed. Int, String, and Float.</p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Revision Control</p>
-</li>
-</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_system_reliability">System Reliability</h2>
+<h2 id="_the_on_the_fly_interview_problem">The On-The-Fly Interview Problem</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Software parts, failure rate</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Availability in Series<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>If one fails, the entire system fails<br></p>
-</li>
-<li>
-<p>Given two parts, x and y, each with a failure rate of 10% in series, the total<br>
-failure rate is: <code>19%</code>, and success rate of: <code>81%</code>.<br>
-<code>A = A_x * A_y</code><br>
-<code>.81 = .9 * .9</code><br></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Availability in Parallel<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>If both fail, the entire system fails<br></p>
-</li>
-<li>
-<p>If one fails, the system will continue to operate<br></p>
-</li>
-<li>
-<p>Given the same system as before but in parallel, the total failure rate is: <code>1%</code>,
-and success rate of: <code>99%</code>.<br>
-<code>A = 1 - (1 - A_x) * (1 - A_y)</code><br>
-<code>A = 1 - (1 - A_x)^2</code><br>
-<code>.99 = 1 - (1 - .9)^2</code></p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
+<p>100 job candidates<br>
+interview lasts one day.</p>
 </div>
 <div class="paragraph">
-<p><span class="underline"><strong>Pros</strong></span> : Safe, rigorous analysis</p>
+<p>How to make the decision about whom to hire?<br></p>
 </div>
 <div class="paragraph">
-<p><span class="underline"><strong>Cons</strong></span> : Time + $$ consuming (expensive)</p>
+<p>1st guy: Just say no, use them as learning sample. Remember their performance.
+2nd guy: Much better than the first. Reject, and learn from them.
+3rd guy: &#8230;&#8203;</p>
 </div>
+<div class="paragraph">
+<p>When to stop learning? Problem is applicable to machine learning.</p>
 </div>
+<div class="paragraph">
+<p>Two phases&#8201;&#8212;&#8201;the learning phase, and decision phase. How to partition them?</p>
 </div>
-<div class="sect1">
-<h2 id="_analyze_system_use_diagram">Analyze System (Use Diagram)</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>All possible point of views are exhausted</p>
-</li>
-<li>
-<p>Unified modeling language (UML)</p>
-</li>
-<li>
-<p>SE tools to describe system</p>
-</li>
-<li>
-<p>Use-case diagram is 1st UML</p>
-<div class="ulist">
-<ul>
-<li>
-<p>def system boundary (rectangle)</p>
-</li>
-<li>
-<p>def system features/functions (ovals within rectangle)</p>
-</li>
-<li>
-<p>def users (ordinary users (left of rectangle), privileged users (right of rectangle))</p>
-</li>
-<li>
-<p>def connection between users + functionality</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">PRACTICE</dt>
-<dd>
-<p>Draw a diagram for a library</p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="_finite_state_machine_fsm">Finite State Machine (FSM)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Model logic/algorithm</p>
-</li>
-<li>
-<p>Binary Stream 0, 1, $ (end of stream)</p>
-</li>
-<li>
-<p>Arrow to indicate initial state</p>
-</li>
-<li>
-<p>Double circle to indicate final state</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">PRACTICE</dt>
-<dd>
-<p>Create a FSM to recognize 010 and 101</p>
-</dd>
-<dt class="hdlist1">PRACTICE</dt>
-<dd>
-<p>Create a FSM to recognize even binary numbers</p>
-</dd>
-<dt class="hdlist1">PRACTICE</dt>
-<dd>
-<p>Create a FSM to recognize binary values <code>n % 3 = 1</code></p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
-</div>
+<div class="paragraph">
+<p>Have too much learning is not good. Best place to stop learning is at <code>1/e</code> (~37% rule).</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-17 14:00:49 EDT
+Last updated 2018-10-24 15:19:25 EDT
 </div>
 </div>
 </body>
