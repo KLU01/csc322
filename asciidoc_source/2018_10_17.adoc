@@ -32,16 +32,27 @@ else: #odd
 * Used to be the king of all the diagrams. Some old timer programmers may ask question about bubble diagram (DFD).
 
 // Add the pictures
+.Data Flow Diagram Symbols
+image::../pics/dfd_symbols.jpg[]
 
 * DFD is hieararchical. Designed for CEO/high-level. Executive level chart without technical details.
 * For a DFD to make sense to developers, you need to refine it. Add more Process blocks and details.
 * DFD is not a part of UML any more. But, is the ancestor to the class diagram.
 ** Difference between DFD and class:
 *** Everything is a class. Object oriented concepts. Has different symbols...
-*** // Show the symbol equivalent pictures
+
+.DFD to Class Diagram Equivalent Symbols
+image::../pics/dfd_class_equivalent.png[]
+
+.Bookstore Example
+image::../pics/dfd_bookstore.png[]
 
 === Collaboration Diagram
 Collaboration diagram:: DFD with class diagram notation.
+
+.Bookstore in Collaboration Diagram
+image::../pics/collab_diagram_bookstore.jpg[]
+
 Sequence class diagram:: Equivalent to Collaborative diagram, but arranged differently. Put all classes in one row, drop down long bars from each symbol, and connect them with arrows appropriately.
 
 Why bother having two different class diagrams? +
@@ -53,6 +64,9 @@ Which one do you prefer? +
 * Popular in Database design.
 * Low level design must have logic/algorithm design (DFD/Col/Seq)
 * Must also have data structure (DB and classes) design: ER diagram
+
+.ER Diagram Symbols
+image::../pics/er_symbols.jpg[]
 
 Ex:
 ```
@@ -70,7 +84,7 @@ Class Student:
 Judgement: is this class definition okay, or not? +
 NO GOOD. We want to know just about students. Redundant information: you don't need to repeat the same chairman for every student instance. Not optimal definition.
 * Space redundancy
-* Update redundancy: Must be as atomic as possible to ensure consistency. If you have to update 1,000,000 records, it might fail part way through and leave your data in a bad state. 
+* Update redundancy: Must be as atomic as possible to ensure consistency. If you have to update 1,000,000 records, it might fail part way through and leave your data in a bad state.
 
 Remove redundancies and create separate classes:
 
@@ -90,7 +104,8 @@ class col_pres:
 Relation between student and d_c +
 Relational database RDB, construct bridge/relation among DB.
 
-// ER diagram symbols
+.Student Roster Example in Diagram
+image::../pics/er_roster.jpg[]
 
 .Nature of any relation
 1 to 1:: draw a -> on both sides
@@ -98,4 +113,7 @@ Relational database RDB, construct bridge/relation among DB.
 many to many:: draw => or plain edges.
 
 rounded arrow:: 1 and only 1
-angular arrow:: at most 1. Could be 0. 
+angular arrow:: at most 1. Could be 0.
+
+.ER Asymmetric Relationship (Leaders & Countries)
+image::../pics/er_asymmetric_relationship.jpg[]
