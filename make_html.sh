@@ -13,4 +13,3 @@ for filename in html/*.html; do
 done
 
 cat templates/end.html >> index.html
-cp asciidoc_source/*.png html/

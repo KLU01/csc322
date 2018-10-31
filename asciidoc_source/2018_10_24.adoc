@@ -8,7 +8,7 @@
 == Entity Relation Diagrams
 
 .Figure of relationships between mother, father, and child
-image::man_woman_kids.png[]
+image::../pics/man_woman_kids.png[]
 
 E/R:: each entity is one table. +
 each relation/diamond is one table.
