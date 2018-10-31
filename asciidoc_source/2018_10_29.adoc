@@ -6,7 +6,9 @@ NOTE: Petri-net, FSM, State Chart: formal method to describe a system
 == 3 types of diagrams / techniques
 1. Formal : use math / logic to describe petri-net, FSM, State diagram
 2. Informal : NL
-3. Active Research tools (internet, os, ...)
+3. Semi-formal: use-case diagram, E/R, pseudo-code
+
+DFD: combination of NL+graphs+math/logic
 
 == FSM vs State Chart/Diagram
 

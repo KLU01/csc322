@@ -5,8 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="10/01/2018">
-<title>Software Engineering</title>
+<title>Midterm: Study Sheet</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -433,137 +432,481 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Software Engineering</h1>
-<div class="details">
-<span id="author" class="author">10/01/2018</span><br>
-</div>
+<h1>Midterm: Study Sheet</h1>
 </div>
 <div id="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Moving Target</dt>
-<dd>
-<p>Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different.<br>
-They have no idea whether the moved objective is very small or big.</p>
-</dd>
-</dl>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Study everything from the quiz 1 study sheet including this.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+No FSM on exam BUT every other diagram may show up!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_types_of_diagrams_techniques">3 Types of Diagrams / Techniques</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Formal : use math / logic to describe petri-net, FSM, State diagram<br>
+More difficult to write, complex &#8594; not popular in industry</p>
+</li>
+<li>
+<p>Informal : Natural language</p>
+</li>
+<li>
+<p>Semi-formal : use-case diagram, E/R, pseudo-code</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_flow_diagram_dfd">Data Flow Diagram (DFD)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong class="blue">DFD Diagrams</strong> illustrate how data flows through a system.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Process</p>
+</li>
+<li>
+<p>Source/Destination</p>
+</li>
+<li>
+<p>Data file/DB</p>
+</li>
+<li>
+<p>Hierarchical</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For CEO/high-lvl ppl b/c without technical details</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Notation for DFD:</div>
+<ul>
+<li>
+<p>Source/Destination: Multiple boxes</p>
+</li>
+<li>
+<p>Process: Rounded rectangle</p>
+</li>
+<li>
+<p>Datafile/Database: box open on right side</p>
+</li>
+<li>
+<p>Dataflow: Arrows with text to describe the data</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Mini - amazon (m-a)
+● Customers will put in book order and personal information
+● m-a checks the criminal record/credit record of the customer
+  ○ If wrong no service (CALL FBI, DODGE DODGE EVADE)
+● m-a check DB/DW if book is available
+  ○ If yes, cash return book
+  ○ If no, feedback to order system
+● If a book has many outstanding orders
+  ○ m-a will order from publisher</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/DFD_book.png" alt="DFD book">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_er_diagram">ER Diagram</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Circle : Attributes</p>
 </div>
 <div class="paragraph">
-<div class="title">CS Project Vs. Traditional Engineering</div>
-<p>Which is harder?</p>
+<p>Rectangle : Entity (nouns)</p>
 </div>
 <div class="paragraph">
-<p>Software engineering is harder b/c there is a lack of visualization. It&#8217;s hard to justify our efforts.<br>
-Hard to communicate with clients/bosses<br>
-Dev vs clients - they are in a whole different world. They don&#8217;t know CS, math, or anything. Instructions can be ambiguous.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Mutual Misunderstanding</dt>
-<dt class="hdlist1">Ex</dt>
-<dd>
-<p>One lady - "I had a lamb."<br></p>
-<div class="olist arabic">
-<div class="title">Possible meanings:</div>
-<ol class="arabic">
-<li>
-<p>Ate the lamb meat</p>
-</li>
-<li>
-<p>Owned/held a lamb in the past</p>
-</li>
-<li>
-<p>Owned an expensive car (slang)</p>
-</li>
-<li>
-<p>A very nice husband/bf</p>
-</li>
-</ol>
-</div>
-</dd>
-</dl>
+<p>Diamond : Relation (verb)</p>
 </div>
 <div class="paragraph">
-<div class="title">Chinese vs Japanese</div>
-<p>Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows &lt;20% japanese.</p>
+<p>Line : Many to Many</p>
 </div>
+<div class="paragraph">
+<p>Line with pointed arrow : Many to at most 1</p>
+</div>
+<div class="paragraph">
+<p>Line with rounded arrow : Many to 1</p>
+</div>
+<div class="sect2">
+<h3 id="_relational_database">Relational Database</h3>
+<div class="paragraph">
+<p>Reduce redundancy</p>
+</div>
+<div class="paragraph">
+<div class="title">Functional dependency</div>
+<p>For a database, for any two tuples, if they share the same value present in the LHS, then the RHS should be the same</p>
+</div>
+<div class="paragraph">
+<div class="title">Key or index</div>
+<p>An attribute or set of attributes that uniquely determine one tuple</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nf_normal_form_onion_layers">NF = Normal form (onion layers)</h3>
+<div class="paragraph">
+<p><strong>1NF</strong> = 1st normal form<br>
+- No redundant tuples<br>
+- All attributes are typed (low bar)</p>
+</div>
+<div class="paragraph">
+<p><strong>2NF</strong> = 2nd normal form<br>
+- Allows transitive dependencies (A &#8594; B, B &#8594; C)</p>
+</div>
+<div class="paragraph">
+<p><strong>3NF</strong> = 3rd normal form<br>
+- For all non-key attributes, they are directly determined by the key attribute(s)</p>
+</div>
+<div class="paragraph">
+<p><strong>5NF</strong> = 5th normal form<br>
+- 2-attribute table<br>
+- This is the dream database<br>
+- However, this rarely happens</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaboration_diagram">Collaboration Diagram</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>  o     = Source
+/   \</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>|--o = (1/0)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> o = database
+---</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Circle with arrow = control</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/collab_diagram_bookstore.jpg" alt="collab diagram bookstore">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sequence_class_diagram">Sequence Class Diagram</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Equivalent to Collaborative diagram, but arranged differently.
+Put all classes in one row, drop down long bars from each symbol, and connect them with arrows appropriately.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/sequence_atm.png" alt="sequence atm">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaborative_vs_sequence">Collaborative vs Sequence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Which one do you prefer?<br>
+* Sequence class is very clean, friendly to computers. Can be encoded as a matrix.
+* Collaboration is more intuitive, messy, preferred by humans.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unified_modeling_language_uml">Unified Modeling Language (UML)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong class="blue">UML Diagrams</strong> describe the boundary, structure and the behavior of a system and the objects within it.
+Benefits are:<br>
+1. Scalable<br>
+2. Secure<br>
+3. Robust in execution</p>
+</div>
+<div class="sect2">
+<h3 id="_state_diagram">State Diagram</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use rectangles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>initial rectangle</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Smart to have a catch all state</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Draw a state diagram of a vending machine accepting 5, 10, 25 cents.
+Goal : Get 30 cents</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/state_vending_machine.jpg" alt="state vending machine">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_difference_between_state_diagram_fsm">Difference between State Diagram &amp; FSM</h2>
+<div class="sectionbody">
 <div class="olist arabic">
-<div class="title">Solution to Mutual Misunderstandings</div>
 <ol class="arabic">
 <li>
-<p>Possibly with more Natural Language, but this might invite more confusion.</p>
+<p>Rectangles vs Circles</p>
 </li>
 <li>
-<p>Math: Universal language, nail down the details.</p>
+<p>Long rectangle = initial/base state</p>
 </li>
 <li>
-<p>Diagrams: many diagrams. 1 pic = 1000 words.</p>
-</li>
-<li>
-<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
+<p>State can handle loops / iteration</p>
 </li>
 </ol>
 </div>
-<div class="dlist">
-<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
-<dl>
-<dt class="hdlist1">ANSWER</dt>
-<dd>
-<p>LACK OF VISUALIZATION ( will appear on quiz )</p>
-</dd>
-</dl>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_petri_net">Petri-Net</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Superset of FSM</p>
+</li>
+<li>
+<p>Equivalent to Turing Machine</p>
+</li>
+<li>
+<p>NOT UML</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_components_of_petri_net">Components of petri-net</h3>
 <div class="olist arabic">
-<div class="title">Quiz/Exam Structure</div>
 <ol class="arabic">
 <li>
-<p>Concepts: Be concise, but don&#8217;t be too concise. These are 2pts, don&#8217;t write 2 pages worth of stuff.</p>
+<p>states, represented by circles</p>
 </li>
 <li>
-<p>Figures/Diagrams</p>
+<p>Tokens, represented by dots inside the circles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tokens are used to represent system resources</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Figures/Diagrams or some design</p>
+<p>transition, represented by arrows →|→</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Input state(s) and output state(s)</p>
 </li>
 <li>
-<p>Software Design/Coding: Easy/Medium difficulty.<br>
-Make answer efficient <code>O(nlogn)</code>, not <code>O(n<sup>2</sup>)</code>.</p>
+<p>The transition can either be fired (there is a dynamic action) or blocked</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the # of tokens in every input places/states &gt;= the # of input legs, then the transition is fired</p>
+</li>
+<li>
+<p>If fired, we remove the tokens from the input places per # of input legs. We then add tokens to output places per # of output legs</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+All transitions are AND Gates
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bankers_problem">Banker&#8217;s Problem</h3>
+<div class="paragraph">
+<p>There are 3 bankers sitting around a dinner table, given one chopstick each. They need 2 in order to eat. They are in a Deadlock</p>
+</div>
+<div class="paragraph">
+<p>Deadlock : partial resources, but no one can proceed</p>
+</div>
+<div class="paragraph">
+<p>Solve deadlock
+Goal: Solve the deadlock and give everyone a chance to use the "chopsticks"
+1. Queue-based Solution
+  ■ Based on $$$/age/weight rank, use a priority queue
+  ■ However, this is unfair to those at the back of the queue → discrimination
+2. Use a fair policy&#8212;&#8203;Time Sharing
+  ■ Each banker is allotted x amount of time to eat, etc.
+  ■ Initial ranking doesn&#8217;t actually matter</p>
+</div>
+<div class="literalblock">
+<div class="title">Example</div>
+<div class="content">
+<pre>Given one banker, if there are 3 chopsticks, that one banker takes a pair of chopsticks
+  |
+  v
+The banker is able to eat (transition is fired)
+  |
+  v
+After the banker finishes eating, the two chopsticks gets returned to the pool of resources
+
+However, if there were 3 bankers, then there's a deadlock, and this cannot happen</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/petri_banker.png" alt="petri banker">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_library">Library</h3>
+<div class="literalblock">
+<div class="content">
+<pre>New books will be registered by a librarian and then put on bookshelf</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/petri_library1.png" alt="petri library1">
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>All customers must provide ID to check out books</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/petri_library2.png" alt="petri library2">
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Returning books (3 actions which are OR)
+a. Books returned before deadline are put back on the shelves
+b. late returns (&lt; 3 months) will be fined
+c. late returns (&gt; 3 months) will be reported to collection company</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../pics/petri_library3.png" alt="petri library3">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quickselect">Quickselect</h2>
+<div class="sectionbody">
 <div class="olist arabic">
-<div class="title">Software Engineering Goals</div>
+<div class="title">Algorithm</div>
 <ol class="arabic">
 <li>
-<p>User-friendly: Easy to use by users (ex: Apple iOS)</p>
+<p>Randomly choose one anchor</p>
 </li>
 <li>
-<p>Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.</p>
+<p>Find the right position k<br>
+○ If k is half of size A, we are done<br>
+○ If k is &gt; half, the anchor is &gt; median. Search the prior array for the median<br>
+○ If k is &lt; half, the anchor is &lt; median. Search the post array for the median with new ranking (n/2 - k)</p>
 </li>
 </ol>
 </div>
-<div class="olist arabic">
-<div class="title">How to make code understandable</div>
-<ol class="arabic">
+<div class="ulist">
+<div class="title">Time complexity of Quickselect</div>
+<ul>
 <li>
-<p>Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does.<br>
-Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.</p>
+<p>n &#8656; time complexity of quickselect &#8656; O(n log n)</p>
 </li>
 <li>
-<p>Beautify your code. Python forces you to do this.</p>
+<p>Worst case: O(n 2 ), same as quicksort</p>
 </li>
 <li>
-<p>Naming conventions - make name of functions and variables meaningful.</p>
+<p>Best case: O(n)</p>
 </li>
 <li>
-<p>Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.</p>
+<p>We are interested in the statistically average case: O(n)</p>
 </li>
-</ol>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-05 00:50:53 EDT
+Last updated 2018-10-31 01:53:07 EDT
 </div>
 </div>
 </body>

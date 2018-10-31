@@ -439,6 +439,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Petri-net, FSM, State Chart: formal method to describe a system
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_types_of_diagrams_techniques">3 types of diagrams / techniques</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Formal : use math / logic to describe petri-net, FSM, State diagram</p>
+</li>
+<li>
+<p>Informal : NL</p>
+</li>
+<li>
+<p>Semi-formal: use-case diagram, E/R, pseudo-code</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>DFD: combination of NL+graphs+math/logic</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_fsm_vs_state_chartdiagram">FSM vs State Chart/Diagram</h2>
 <div class="sectionbody">
@@ -468,7 +505,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Super super set of FSM</p>
 </div>
 <div class="paragraph">
-<div class="title">Banker&#8217;s Paradox</div>
+<p>Transition firing/blocking</p>
+</div>
+<div class="paragraph">
+<p><strong>Firing</strong>: for every input places the number of tokens should be &gt;= the number of input legs;
+if at least one of them have &lt; # input then the transition is <em>blocked</em></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Draw one connected petri-net</p>
+</li>
+<li>
+<p>Never connect 2 places / transition directly</p>
+</li>
+<li>
+<p>EVERY transition / place have a name</p>
+</li>
+<li>
+<p>Don&#8217;t dot places randomly</p>
+</li>
+<li>
+<p>More importantly, never have one powerful transition handling everything</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bankers_paradox">Banker&#8217;s Paradox</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>Dox:</p>
 </div>
 <div class="paragraph">
@@ -483,12 +550,31 @@ Deadlock: 3 sticks, have enough res for one banker to eat</p>
 <div class="paragraph">
 <p>Relation to economics</p>
 </div>
+<div class="paragraph">
+<p>Fair = <strong>time sharing</strong><br>
+many users time share the same server</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_solve_deadlock">To Solve Deadlock</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>priority queuing + time</p>
+</li>
+<li>
+<p>by randomized algorithm (quick sort, random)</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-29 14:14:57 EDT
+Last updated 2018-10-30 23:39:55 EDT
 </div>
 </div>
 </body>
