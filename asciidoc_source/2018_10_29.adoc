@@ -1,0 +1,56 @@
+= Software Engineering
+10/29/2018
+
+NOTE: Petri-net, FSM, State Chart: formal method to describe a system
+
+== 3 types of diagrams / techniques
+1. Formal : use math / logic to describe petri-net, FSM, State diagram
+2. Informal : NL
+3. Semi-formal: use-case diagram, E/R, pseudo-code
+
+DFD: combination of NL+graphs+math/logic
+
+== FSM vs State Chart/Diagram
+
+.Differences
+1. All circles vs all rectangles (long bar as init/base)
+2. One-shot rec vs count number of 011: loop
+3. Binary success/fail (non UML) many more effects
+4. State + Event / pred unconditionally return
+
+== Petri-Net
+Super super set of FSM
+
+Transition firing/blocking
+
+*Firing*: for every input places the number of tokens should be >= the number of input legs;
+if at least one of them have < # input then the transition is __blocked__
+
+1. Draw one connected petri-net
++
+2. Never connect 2 places / transition directly
++
+3. EVERY transition / place have a name
++
+4. Don't dot places randomly
++
+5. More importantly, never have one powerful transition handling everything
+
+== Banker's Paradox
+Dox:
+
+System has limited resources, more users +
+Users only have partial res, no one can con. +
+Deadlock: 3 sticks, have enough res for one banker to eat
+
+1, 2, 3 sticks: deadlock +
+>=4 sticks: 1 banker can eat, no deadlock
+
+Relation to economics
+
+Fair = *time sharing* +
+many users time share the same server
+
+== To Solve Deadlock
+1. priority queuing + time
+2. by randomized algorithm (quick sort, random)

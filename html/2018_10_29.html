@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="10/01/2018">
+<meta name="author" content="10/29/2018">
 <title>Software Engineering</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -435,135 +435,146 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Software Engineering</h1>
 <div class="details">
-<span id="author" class="author">10/01/2018</span><br>
+<span id="author" class="author">10/29/2018</span><br>
 </div>
 </div>
 <div id="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Moving Target</dt>
-<dd>
-<p>Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different.<br>
-They have no idea whether the moved objective is very small or big.</p>
-</dd>
-</dl>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Petri-net, FSM, State Chart: formal method to describe a system
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_types_of_diagrams_techniques">3 types of diagrams / techniques</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Formal : use math / logic to describe petri-net, FSM, State diagram</p>
+</li>
+<li>
+<p>Informal : NL</p>
+</li>
+<li>
+<p>Semi-formal: use-case diagram, E/R, pseudo-code</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<div class="title">CS Project Vs. Traditional Engineering</div>
-<p>Which is harder?</p>
+<p>DFD: combination of NL+graphs+math/logic</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fsm_vs_state_chartdiagram">FSM vs State Chart/Diagram</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">Differences</div>
+<ol class="arabic">
+<li>
+<p>All circles vs all rectangles (long bar as init/base)</p>
+</li>
+<li>
+<p>One-shot rec vs count number of 011: loop</p>
+</li>
+<li>
+<p>Binary success/fail (non UML) many more effects</p>
+</li>
+<li>
+<p>State + Event / pred unconditionally return</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_petri_net">Petri-Net</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Super super set of FSM</p>
 </div>
 <div class="paragraph">
-<p>Software engineering is harder b/c there is a lack of visualization. It&#8217;s hard to justify our efforts.<br>
-Hard to communicate with clients/bosses<br>
-Dev vs clients - they are in a whole different world. They don&#8217;t know CS, math, or anything. Instructions can be ambiguous.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Mutual Misunderstanding</dt>
-<dt class="hdlist1">Ex</dt>
-<dd>
-<p>One lady - "I had a lamb."<br></p>
-<div class="olist arabic">
-<div class="title">Possible meanings:</div>
-<ol class="arabic">
-<li>
-<p>Ate the lamb meat</p>
-</li>
-<li>
-<p>Owned/held a lamb in the past</p>
-</li>
-<li>
-<p>Owned an expensive car (slang)</p>
-</li>
-<li>
-<p>A very nice husband/bf</p>
-</li>
-</ol>
-</div>
-</dd>
-</dl>
+<p>Transition firing/blocking</p>
 </div>
 <div class="paragraph">
-<div class="title">Chinese vs Japanese</div>
-<p>Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows &lt;20% japanese.</p>
+<p><strong>Firing</strong>: for every input places the number of tokens should be &gt;= the number of input legs;
+if at least one of them have &lt; # input then the transition is <em>blocked</em></p>
 </div>
 <div class="olist arabic">
-<div class="title">Solution to Mutual Misunderstandings</div>
 <ol class="arabic">
 <li>
-<p>Possibly with more Natural Language, but this might invite more confusion.</p>
+<p>Draw one connected petri-net</p>
 </li>
 <li>
-<p>Math: Universal language, nail down the details.</p>
+<p>Never connect 2 places / transition directly</p>
 </li>
 <li>
-<p>Diagrams: many diagrams. 1 pic = 1000 words.</p>
+<p>EVERY transition / place have a name</p>
 </li>
 <li>
-<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
+<p>Don&#8217;t dot places randomly</p>
+</li>
+<li>
+<p>More importantly, never have one powerful transition handling everything</p>
 </li>
 </ol>
 </div>
-<div class="dlist">
-<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
-<dl>
-<dt class="hdlist1">ANSWER</dt>
-<dd>
-<p>LACK OF VISUALIZATION ( will appear on quiz )</p>
-</dd>
-</dl>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_bankers_paradox">Banker&#8217;s Paradox</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dox:</p>
+</div>
+<div class="paragraph">
+<p>System has limited resources, more users<br>
+Users only have partial res, no one can con.<br>
+Deadlock: 3 sticks, have enough res for one banker to eat</p>
+</div>
+<div class="paragraph">
+<p>1, 2, 3 sticks: deadlock<br>
+&gt;=4 sticks: 1 banker can eat, no deadlock</p>
+</div>
+<div class="paragraph">
+<p>Relation to economics</p>
+</div>
+<div class="paragraph">
+<p>Fair = <strong>time sharing</strong><br>
+many users time share the same server</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_solve_deadlock">To Solve Deadlock</h2>
+<div class="sectionbody">
 <div class="olist arabic">
-<div class="title">Quiz/Exam Structure</div>
 <ol class="arabic">
 <li>
-<p>Concepts: Be concise, but don&#8217;t be too concise. These are 2pts, don&#8217;t write 2 pages worth of stuff.</p>
+<p>priority queuing + time</p>
 </li>
 <li>
-<p>Figures/Diagrams</p>
-</li>
-<li>
-<p>Figures/Diagrams or some design</p>
-</li>
-<li>
-<p>Software Design/Coding: Easy/Medium difficulty.<br>
-Make answer efficient <code>O(nlogn)</code>, not <code>O(n<sup>2</sup>)</code>.</p>
+<p>by randomized algorithm (quick sort, random)</p>
 </li>
 </ol>
 </div>
-<div class="olist arabic">
-<div class="title">Software Engineering Goals</div>
-<ol class="arabic">
-<li>
-<p>User-friendly: Easy to use by users (ex: Apple iOS)</p>
-</li>
-<li>
-<p>Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.</p>
-</li>
-</ol>
 </div>
-<div class="olist arabic">
-<div class="title">How to make code understandable</div>
-<ol class="arabic">
-<li>
-<p>Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does.<br>
-Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.</p>
-</li>
-<li>
-<p>Beautify your code. Python forces you to do this.</p>
-</li>
-<li>
-<p>Naming conventions - make name of functions and variables meaningful.</p>
-</li>
-<li>
-<p>Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.</p>
-</li>
-</ol>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-05 00:50:53 EDT
+Last updated 2018-10-30 23:39:55 EDT
 </div>
 </div>
 </body>
