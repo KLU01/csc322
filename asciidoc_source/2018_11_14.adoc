@@ -1,0 +1,131 @@
+= Software Engineering
+11/14/2018
+
+== More Software Cost Estimations
+1. Based on human hours. Ex: $20 / hour. +
+Pros: Simple +
+Cons: More cheating and lying.
+2. By number of lines. You trust yourself the most. +
+Pros: No trust issue +
+Cons: Irrelevant experience
+3. Schach: Estimate software. Different factors.
+.. Size of the system (# of lines)
+.. Weighted sum
+.. Reputation of the company +
+Pros: Trade-off +
+Cons: Unfair, arbitrary, complicated to calculate.
+
+The two leading methods: # of lines & human hours.
+
+Why? Because of trust. Someone can only lie once or twice before getting fired.
+And if you get that reputation of being dishonest, no one will hire you.
+
+== Software Design
+
+.Two levels of design.
+.. High Level
+... The architectural design. Figure out the number of modules, number of classes, and
+communication among them.
+... The overall picture of a system.
+... Everyone works on sub-systems then puts them together.
+
+.. Low level
+... Structural design.
+... Detailed design. Takes care of the data structure.
+... Make sure your system is efficient, by default.
+
+Ex: In database, we want to remove all redundant data. Efficient low-level algorithm/ds to remove redundant data.
+
+Just hash all items. In Python, use Set.
+
+Ex: Fibonacci: F(n) = F(n-1) + F(n-2)
+```
+def Fib(n):
+  if n < 0:
+    print("...")
+  elif n < 2:
+    return n
+  else:
+    return Fib(n-1) + Fib(n-2)
+```
+
+Complexity is a big issue.
+
+T(n) = T(n-1) + T(n-2)
+
+.Solving a recurrence relation/difference equation:
+1. Try expanding form to find pattern.
+2. If that doens't work, take educated guess of T(n) and plug in to test it.
+
+Guess: T(n) = a^n^ + b;
+
+Plug in: a^n^ + b = a^n-1^ + b + a^n-2^ + b
+
+The only value of "b" that works is 0.
+
+a^n^ = a^n-1^ + a^n-2^
+
+Divide everything by a^n-2^
+
+a^2^ = a + 1
+
+a^2^ - a - 1 = 0
+
+Quadratic equation.
+
+a = 1.68 (golden ratio, phi)
+
+Thus, the time complexity of above code is `O(1.68^n)`. Very bad exponential.
+
+How to do fibonacci in linear time? Use dynamic programming. In this specific case, can also be described as a stair climbing algorithm.
+
+```
+def fib(n):
+  if n < 2:
+    return n
+  prev_1, prev_2 = 1, 0
+  for i in range(n):
+    prev_2, prev_1 = prev_1, prev_1 + prev_2
+
+  return prev_1
+```
+
+Binet's formula for fibonacci can result in `O(logn)` solution. Binet takes the form of `F(n) = a^n + b^n + c`. With an efficient power function (logn), then the whole formula can be computed with logn time.
+
+== Modularization
+
+How to partition a system into different modules? What's the criteria to partition a system?
+
+.Ex: How to partition a school, like CCNY
+1. Schools or divisions, then departments. Only system that works. It is the only one based on functionality, not superficial. +
+Divide and conquer the system, for easy control. If you still cannot control the system, then your division is wrong.
+2. Gender: a boy's school or a girl's school. (Can't do it, sexism)
+3. Age: Kids, young, and old. (Can't do it, ageist)
+4. Race (Can't do it, racist)
+5. Performance (Can't do it, elitism)
+
+.Ex: Computer Hardware. AND, OR, NOT gates.
+. When design a CPU, there are the AND groups, the OR group, and the NOT group. Everyone in AND is an expert in AND gates, etc. Does this make sense? No, because there will be too many connections to keep track of between the groups.
+. Close coupling, the modules are too close.
+. In reality, they dont group by gate. They group CPU components by ALU, Register module, etc. Looser coupling.
+
+Coupling:: How close or loose 2 modules are. The ideal state is to keep modules as loose as possible.
+Cohesion:: Within the same module, or same subsystem, how close or loose the features are. They should be close together. Want to reuse a module or subsystem.
+
+Avoid lengthy modules/functions.
+
+All of these techniques are to make the system easier to design, implement, test, and maintain.
+
+.Different Levels of Couplings, from Worst to Best (closest to loosest)
+1. Coincidental/trash bin. +
+Everything is there. Totally un-reusable. +
+Module Ex:: Admit students. +
+Arrest students +
+Protests. +
+Why put arrest students in same module as admit students? The former rarely ever happens.
+2. Logical +
+Now we have multiple "trash bins". Paper bin, plastic, and trash. +
+Module Ex:: Take cs322 +
+Take Engl 101 +
+Take Phil 202 +
+Not really trashbin because they are all courses.
