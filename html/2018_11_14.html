@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="10/01/2018">
+<meta name="author" content="11/14/2018">
 <title>Software Engineering</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -435,135 +435,282 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Software Engineering</h1>
 <div class="details">
-<span id="author" class="author">10/01/2018</span><br>
+<span id="author" class="author">11/14/2018</span><br>
 </div>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_more_software_cost_estimations">More Software Cost Estimations</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Based on human hours. Ex: $20 / hour.<br>
+Pros: Simple<br>
+Cons: More cheating and lying.</p>
+</li>
+<li>
+<p>By number of lines. You trust yourself the most.<br>
+Pros: No trust issue<br>
+Cons: Irrelevant experience</p>
+</li>
+<li>
+<p>Schach: Estimate software. Different factors.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Size of the system (# of lines)</p>
+</li>
+<li>
+<p>Weighted sum</p>
+</li>
+<li>
+<p>Reputation of the company<br>
+Pros: Trade-off<br>
+Cons: Unfair, arbitrary, complicated to calculate.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The two leading methods: # of lines &amp; human hours.</p>
+</div>
+<div class="paragraph">
+<p>Why? Because of trust. Someone can only lie once or twice before getting fired.
+And if you get that reputation of being dishonest, no one will hire you.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_software_design">Software Design</h2>
+<div class="sectionbody">
+<div class="olist loweralpha">
+<div class="title">Two levels of design.</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>High Level</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The architectural design. Figure out the number of modules, number of classes, and
+communication among them.</p>
+</li>
+<li>
+<p>The overall picture of a system.</p>
+</li>
+<li>
+<p>Everyone works on sub-systems then puts them together.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Low level</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Structural design.</p>
+</li>
+<li>
+<p>Detailed design. Takes care of the data structure.</p>
+</li>
+<li>
+<p>Make sure your system is efficient, by default.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Ex: In database, we want to remove all redundant data. Efficient low-level algorithm/ds to remove redundant data.</p>
+</div>
+<div class="paragraph">
+<p>Just hash all items. In Python, use Set.</p>
+</div>
+<div class="paragraph">
+<p>Ex: Fibonacci: F(n) = F(n-1) + F(n-2)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>def Fib(n):
+  if n &lt; 0:
+    print("...")
+  elif n &lt; 2:
+    return n
+  else:
+    return Fib(n-1) + Fib(n-2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Complexity is a big issue.</p>
+</div>
+<div class="paragraph">
+<p>T(n) = T(n-1) + T(n-2)</p>
+</div>
+<div class="olist arabic">
+<div class="title">Solving a recurrence relation/difference equation:</div>
+<ol class="arabic">
+<li>
+<p>Try expanding form to find pattern.</p>
+</li>
+<li>
+<p>If that doens&#8217;t work, take educated guess of T(n) and plug in to test it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Guess: T(n) = a<sup>n</sup> + b;</p>
+</div>
+<div class="paragraph">
+<p>Plug in: a<sup>n</sup> + b = a<sup>n-1</sup> + b + a<sup>n-2</sup> + b</p>
+</div>
+<div class="paragraph">
+<p>The only value of "b" that works is 0.</p>
+</div>
+<div class="paragraph">
+<p>a<sup>n</sup> = a<sup>n-1</sup> + a<sup>n-2</sup></p>
+</div>
+<div class="paragraph">
+<p>Divide everything by a<sup>n-2</sup></p>
+</div>
+<div class="paragraph">
+<p>a<sup>2</sup> = a + 1</p>
+</div>
+<div class="paragraph">
+<p>a<sup>2</sup> - a - 1 = 0</p>
+</div>
+<div class="paragraph">
+<p>Quadratic equation.</p>
+</div>
+<div class="paragraph">
+<p>a = 1.68 (golden ratio, phi)</p>
+</div>
+<div class="paragraph">
+<p>Thus, the time complexity of above code is <code>O(1.68^n)</code>. Very bad exponential.</p>
+</div>
+<div class="paragraph">
+<p>How to do fibonacci in linear time? Use dynamic programming. In this specific case, can also be described as a stair climbing algorithm.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>def fib(n):
+  if n &lt; 2:
+    return n
+  prev_1, prev_2 = 1, 0
+  for i in range(n):
+    prev_2, prev_1 = prev_1, prev_1 + prev_2
+
+  return prev_1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Binet&#8217;s formula for fibonacci can result in <code>O(logn)</code> solution. Binet takes the form of <code>F(n) = a^n + b^n + c</code>. With an efficient power function (logn), then the whole formula can be computed with logn time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modularization">Modularization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>How to partition a system into different modules? What&#8217;s the criteria to partition a system?</p>
+</div>
+<div class="olist arabic">
+<div class="title">Ex: How to partition a school, like CCNY</div>
+<ol class="arabic">
+<li>
+<p>Schools or divisions, then departments. Only system that works. It is the only one based on functionality, not superficial.<br>
+Divide and conquer the system, for easy control. If you still cannot control the system, then your division is wrong.</p>
+</li>
+<li>
+<p>Gender: a boy&#8217;s school or a girl&#8217;s school. (Can&#8217;t do it, sexism)</p>
+</li>
+<li>
+<p>Age: Kids, young, and old. (Can&#8217;t do it, ageist)</p>
+</li>
+<li>
+<p>Race (Can&#8217;t do it, racist)</p>
+</li>
+<li>
+<p>Performance (Can&#8217;t do it, elitism)</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Ex: Computer Hardware. AND, OR, NOT gates.</div>
+<ol class="arabic">
+<li>
+<p>When design a CPU, there are the AND groups, the OR group, and the NOT group. Everyone in AND is an expert in AND gates, etc. Does this make sense? No, because there will be too many connections to keep track of between the groups.</p>
+</li>
+<li>
+<p>Close coupling, the modules are too close.</p>
+</li>
+<li>
+<p>In reality, they dont group by gate. They group CPU components by ALU, Register module, etc. Looser coupling.</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Moving Target</dt>
+<dt class="hdlist1">Coupling</dt>
 <dd>
-<p>Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different.<br>
-They have no idea whether the moved objective is very small or big.</p>
+<p>How close or loose 2 modules are. The ideal state is to keep modules as loose as possible.</p>
+</dd>
+<dt class="hdlist1">Cohesion</dt>
+<dd>
+<p>Within the same module, or same subsystem, how close or loose the features are. They should be close together. Want to reuse a module or subsystem.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<div class="title">CS Project Vs. Traditional Engineering</div>
-<p>Which is harder?</p>
-</div>
-<div class="paragraph">
-<p>Software engineering is harder b/c there is a lack of visualization. It&#8217;s hard to justify our efforts.<br>
-Hard to communicate with clients/bosses<br>
-Dev vs clients - they are in a whole different world. They don&#8217;t know CS, math, or anything. Instructions can be ambiguous.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Mutual Misunderstanding</dt>
-<dt class="hdlist1">Ex</dt>
-<dd>
-<p>One lady - "I had a lamb."<br></p>
-<div class="olist arabic">
-<div class="title">Possible meanings:</div>
-<ol class="arabic">
-<li>
-<p>Ate the lamb meat</p>
-</li>
-<li>
-<p>Owned/held a lamb in the past</p>
-</li>
-<li>
-<p>Owned an expensive car (slang)</p>
-</li>
-<li>
-<p>A very nice husband/bf</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>Avoid lengthy modules/functions.</p>
+</div>
+<div class="paragraph">
+<p>All of these techniques are to make the system easier to design, implement, test, and maintain.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Different Levels of Couplings, from Worst to Best (closest to loosest)</div>
+<ol class="arabic">
+<li>
+<p>Coincidental/trash bin.<br>
+Everything is there. Totally un-reusable.<br></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Module Ex</dt>
+<dd>
+<p>Admit students.<br>
+Arrest students<br>
+Protests.<br>
+Why put arrest students in same module as admit students? The former rarely ever happens.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<div class="title">Chinese vs Japanese</div>
-<p>Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows &lt;20% japanese.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Solution to Mutual Misunderstandings</div>
-<ol class="arabic">
-<li>
-<p>Possibly with more Natural Language, but this might invite more confusion.</p>
 </li>
 <li>
-<p>Math: Universal language, nail down the details.</p>
-</li>
-<li>
-<p>Diagrams: many diagrams. 1 pic = 1000 words.</p>
-</li>
-<li>
-<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
-</li>
-</ol>
-</div>
+<p>Logical<br>
+Now we have multiple "trash bins". Paper bin, plastic, and trash.<br></p>
 <div class="dlist">
-<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
 <dl>
-<dt class="hdlist1">ANSWER</dt>
+<dt class="hdlist1">Module Ex</dt>
 <dd>
-<p>LACK OF VISUALIZATION ( will appear on quiz )</p>
+<p>Take cs322<br>
+Take Engl 101<br>
+Take Phil 202<br>
+Not really trashbin because they are all courses.</p>
 </dd>
 </dl>
 </div>
-<div class="olist arabic">
-<div class="title">Quiz/Exam Structure</div>
-<ol class="arabic">
-<li>
-<p>Concepts: Be concise, but don&#8217;t be too concise. These are 2pts, don&#8217;t write 2 pages worth of stuff.</p>
-</li>
-<li>
-<p>Figures/Diagrams</p>
-</li>
-<li>
-<p>Figures/Diagrams or some design</p>
-</li>
-<li>
-<p>Software Design/Coding: Easy/Medium difficulty.<br>
-Make answer efficient <code>O(nlogn)</code>, not <code>O(n<sup>2</sup>)</code>.</p>
 </li>
 </ol>
 </div>
-<div class="olist arabic">
-<div class="title">Software Engineering Goals</div>
-<ol class="arabic">
-<li>
-<p>User-friendly: Easy to use by users (ex: Apple iOS)</p>
-</li>
-<li>
-<p>Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.</p>
-</li>
-</ol>
 </div>
-<div class="olist arabic">
-<div class="title">How to make code understandable</div>
-<ol class="arabic">
-<li>
-<p>Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does.<br>
-Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.</p>
-</li>
-<li>
-<p>Beautify your code. Python forces you to do this.</p>
-</li>
-<li>
-<p>Naming conventions - make name of functions and variables meaningful.</p>
-</li>
-<li>
-<p>Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.</p>
-</li>
-</ol>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-17 14:00:49 -0400
+Last updated 2018-11-14 15:22:31 -0500
 </div>
 </div>
 </body>

@@ -1,0 +1,77 @@
+= Software Engineering
+11/12/2018
+
+== Types of Work and Distributions
+. Democratic
+. Dictator
+. Double-Head
+
+.3 Types of people
+1. Task
+2. Perfection
+3. Interaction
+
+Who should be the leader? Task oriented. These people will be reasonable, not push too hard.
+
+Most should be task, one should be perfection.
+
+Group cohesiveness:: As a team, your team should be very close. Like siblings, or loose as enemies.
+
+Which one is better? Working like siblings doesn't work. Neither does being enemies.
+Lets analyze with pros and cons.
+
+.Pros of Very Close:
+. Better communication
+. Egoless coding and testing
+. Ready to help
+. Feel happy
+
+.Cons of Very Close
+. Less efficient
+. Worse quality code (too afraid to criticize)
+. Group think
+. Danger to higher up -- your team might turn against you.
+
+We can not be too cohesive.
+
+Database Companies
+. Ingres - UCB prof + his phd/master students. Core team is very close. If they don't like CEO, they all go to Oracle together.
+. Informix
+. Oracle
+
+.Pros of Very Loose:
+. Outspoken
+. Good competition
+. Work extra hard
+
+.Cons of Very Loose:
+. Unhappy
+. Toxic competition - sabotage each other
+. Lower quality because no healthy help. Ex, Wright brothers own plane patents, harming the industry as a whole.
+
+Middle ground, the right one: whats the optimal group cohesiveness? Be professional and independent. Work is just work. Keep formalities.
+
+== Software Cost Estimation
+Software cost estimation:: $$, price-tag effort, time -> money.
+
+Optimal way to assign price tag: productivity based measure.
+
+.Fair way to measure price of project ($$$)
+1. Meet spec: functionality +
+The grade for project assigned is based on functionality. +
+Pros: Clear criteria, fair +
+Cons: How to assign price tag, hard to decide
+2. # of Lines as proxy of efforts +
+Pros: Easy to quantify +
+Cons: Easy to cheat, encourage to cheat, encourage bad coding quality, discourage creative coding
+3. Weighted Sum. Recursive/loops/list comprehension. +
+Pros: Simple, only slightly more complex +
+Cons: Still easy to cheat.
+4. Ask experts: relegate to external experts. +
+Pros: No cheating by dev +
+Cons: Fake experts, cheating experts. Avoid cheating: important ML strategy (ensemble learning. ex, random forest, AdaBoost).
+5. Bidding. Competing teams to bid.
+.. Lowest/highest price. Bidders more conservative +
+Second highest/lowest bidder will get it. Mathematically proved to be best by probability. +
+Pros: Fair +
+Cons: No guarantee for quality. Reputation. 
