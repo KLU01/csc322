@@ -1,0 +1,117 @@
+= Software Engineering
+11/16/2018
+
+== The 9 Beads Problem
+9 beads, cannot tell the diff unless you use a balance to measure them. 1 is abnormal. Could be lighter or heavier than the other 8 normal beads. Find out is the abnormal bead heavier or lighter?
+
+Suppose using the scale costs $1000 per weighing.
+
+What are our options?
+
+1. $4000 (4 weighings)
+2. $2000 (2 weighings, impossible) +
+3 vs. 3: balanced: great idea +
+one more to id abn: 3 beads unknown. +
+But, you need to measure two times again to find the bead. So this idea is impossible.
+
+Information theory: We want to maximize the information we can receive with a single weighing.
+
+Start with 3 vs 3 vs 3.
+
+Suppose first weigh is balanced.
+
+Then you do recursively. Need weigh only 3 times.
+
+---
+
+Suppose first weigh is unbalanced.
+
+we know the other group of 3 untouched beads are all normal. Exploit all possible information you can receive.
+
+You have: 3 Normal, 3 potentially Heavy, 3 potentially Light. We have no idea yet.
+
+Next step: weigh 3N vs 3H. If balanced, this means that the heavy is normal.
+
+1 more measure to find the lighter one from the 3L.
+
+Choose 2 random beads from the lighter group and measure against each other. If they are the same, the unpicked bead is abnormal. If they are unequal, the lighter bead is abnormal.
+
+1. Grouping: 3 3 3
+2. Remember info 3N, 3(p)L, 3(p)H
+3. Be exhaustive: cover all cases
+
+*Bonus:* 12 beads, 1 abnormal. How can you still use 3 measures to identify the abnormal? Must have a smart grouping and smart mixing.
+
+== Parallel Search
+Scenario:: 8 bottles of fluid, no difference by color, smell, taste, weight. One is fatal poison. One drop is enough to kill any animal. Takes 24 hours for poison to take effect.
+
+How to find out which is poison within 24 hours?
+
+1. Test on mice. They are not important and cheap. 1 mouse = $100.
+2. Reduce $$ by using
+
+How many mice do we need?
+
+8: is stupid +
+7: can do better
+3: the answer. How?
+
+Combination: redundancy introduction in communication.
+
+We have 8 bottles. Resort to binary number representation.
+
+000, 001, 010, 011, 100, 101, 110, 111.
+
+Use three mice to test the 3 binary positions.
+
+Solution::
+1. Use binary number to represent 8 bottles
+2. Mix bottles having one on three possible positions.
+3. We have 3 resulting mixed bottles.
+4. Let mice drink.
+.. None is dead: 000
+.. All are dead: 111
+.. Only 2nd mouse died: 010
+
+N bottles we can use log(N) mice.
+
+This is a type of smart mixing to achieve better info retrieval.
+
+== Merge Sort
+Merge sort: benefit/beauty (Von Neumann)
+worst: always O(nlog n)
+larger space complexity.
+
+ms(v):
+  v1 = ms(1st half)
+  v2 = ms(2nd half)
+  merge(v1, v2)
+
+Challenge: rewrite merge sort using LOOPS with no recursion.
+
+Problem with recursion is that computer is doing too many things to manage the call stack, which slows down execution.
+
+Idea to rewrite mergesort by loops::
+Computer is better at bottom up computing than top-down, because of system resources.
+1. The bottom of merge-sort is every two neighboring items.
+
+.You use a double loop:
+. outer loop step size: 1, 2, 4, power of 2
+. inner loop merge every 2 adjacent or neighboring item of size "step size"
+
+Call merge function on two ordered arrays.
+
+== Dynamic Programming
+Fibonacci, save in dictionary, check dictionary.
+
+Edit distance: change one word to another by replace, delete, reshuffle.
+
+teh: typo: right word to replace it?
+
+1. the: reshuffle of "he" to "eh"
+2. tea: replace "h" by "a"
+3. ten: .. "h" by "n"
+4. ted
+5. eh: delete t
+
+1 is correct because it is more popular than the other 5. Multiply `edit_distance * frequency` to determine correct choice. Bayesian computing.
