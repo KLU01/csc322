@@ -1,0 +1,66 @@
+= Software Engineering
+11/7/2018
+
+== Successful Software Engineering
+
+.3 Parties
+1. Clients -- ppl w/ $$
+2. Developers -- system analysts, planners, coders, testers, maintenance
+3. Customers -- users
+
+=== Whole System <> Sum of small parts
+Success = Cooperation
+
+Success != # of people
+
+=== Problems in Software Engineering
+1. Lack of visualization
+2. Moving targets
+* To minimize use:
+** right programming language (python efficient)
+** Develop a good design
+** OO/FP disallow
+
+.Prototyping language/scripting: +
+* python (cs, numpy)
+* matlab (octave)
+* R (statistics) (C++, java, c, objective-c)
+* SQL Data Science (stat + cs)
+
+*Project Planning : activities : task, milestones (deadlines), deliverables (documentation / working system)*
+
+=== Lasting Job
+* range for more than 1 phase
+* testing is a lasting job, not phase related
+* lasting : SQA : use spec as constitution
+* Debugging : Self-testing, encoding testing phase
+
+=== 3 Memories (psychology, human beings/animals)
+1. Short (sec/min)
+2. Working (min)
+3. Long-term (days, months, for good)
+* life cycle model
+* how to use programing language to solve problems
+* calculus
+
+.In relation to hardware desing
+1. Register
+2. RAM (expensive)
+3. Hard drive, tapes (cheap)
+
+NOTE: Will not test memory
+
+=== 3 Types of People on a Team
+1. Task Oriented : get the job done as specified
+2. Perfection Oriented : get job done + perfect
+3. Interaction Oriented : love ppt / meetings / talking
+
+*All 3 are necessary* b/c need job to get done (work horse) (1) + establish reputation
+(annoying by necessary) (2) + convincing (3)
+
+Every person is a combination of all
+
+=== Team Format
+1. Dictator : 1 leader handling everything -- handle math / algorithm / ds / $ / prom
+2. Democracy : all members equal
+3. Double-head : manager (people, may not have any CS background) + tech advisor/leader
