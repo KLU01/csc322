@@ -1,0 +1,89 @@
+= Software Engineering
+11/28/2018
+
+== ABET
+Computational professionals are increasingly powerful due to the current pan-computing, universal digitization
+
+.Universal Computing Era
+* Military (nat, security)
+* Medical (privacy, legal problem, anonymize)
+* Legal/wall street profession
+* Law enforcements
+* Homeland security
+* CIA/FBI
+* Spy
+* Civil & Mechanical Engineering
+
+All need math models, programming and coding, no cheating (competent)
+
+== Security
+Clearance for classified information
+
+.Privacy-Personal business, copyrights
+
+* Security authorization
+* National Security (ITAR international traffic in arms regulation control)
+* Different classifications one must obey
+
+== Low-level Design
+
+=== Watch hand: Divide & Conquer
+.For any given time can you develop a function to return the angle formed by the h & m hands
+
+....
+12:00 = 0
+6:00 = 180
+9:00 = 90
+....
+
+How to solve?
+
+Problem: both hands are moving
+
+`h(t) = function of hour and minutes` +
+`360 / 12 = 30`
+
+Divide to fix position (0). Just need to computer the angle of h and m w.r.t. p
+
+Angle of minute hand: degrees
+
+Of minute hand with m = 6m
+
+`360/60 = 6`
+
+Angle of hour hand: f(h, m)
+
+Divide according to h: 30h
+
+`360/12 = 30`
+
+m = m/2
+
+30: degrees to go per hour
+60: total minutes
+
+=== Fair Race Problem
+.Argue about how to be fair for constrained resources
+
+#servers <<< # of users
+
+Top matches with servers located in different location
+
+25 horses, 5 lane track
+
+Find out top 3 horses _fairly_? Design fair algorithm to reward gold/silver/bronze medals
+
+5 matches: based on time. Fair? No because horses are stupid
+
+Which heat a horse is in affect the time
+
+6th match: put all 5 champs in 5 heats. Run them. Ranking 1 through 5: g / s / b to top 3.
+
+Gold given to the champ of the 5th champ round. No challenge
+
+s/b : +
+No. 2 in 6th to get silver: the No. 2 & 3 in the heat won by g medalists can legally complain.
+
+The No. 2 in the heat won by the 2nd in the 6th match. +2, 3 in the 6th match
+
+7th match: 5 horses run again . 1 & 2 get s/b
