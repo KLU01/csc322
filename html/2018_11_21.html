@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="10/01/2018">
+<meta name="author" content="11/21/2018">
 <title>Software Engineering</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -435,135 +435,210 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Software Engineering</h1>
 <div class="details">
-<span id="author" class="author">10/01/2018</span><br>
+<span id="author" class="author">11/21/2018</span><br>
 </div>
 </div>
 <div id="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Moving Target</dt>
-<dd>
-<p>Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different.<br>
-They have no idea whether the moved objective is very small or big.</p>
-</dd>
-</dl>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Content, Common, Control (Good)</div>
+<p><mark>Stamp Coupling</mark> (level 4) : 2 modules pass more data necessary, waste space/bandwidth</p>
 </div>
 <div class="paragraph">
-<div class="title">CS Project Vs. Traditional Engineering</div>
-<p>Which is harder?</p>
+<p><mark>Data Coupling</mark> (level 5) : all data passed btwn are</p>
 </div>
 <div class="paragraph">
-<p>Software engineering is harder b/c there is a lack of visualization. It&#8217;s hard to justify our efforts.<br>
-Hard to communicate with clients/bosses<br>
-Dev vs clients - they are in a whole different world. They don&#8217;t know CS, math, or anything. Instructions can be ambiguous.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Mutual Misunderstanding</dt>
-<dt class="hdlist1">Ex</dt>
-<dd>
-<p>One lady - "I had a lamb."<br></p>
-<div class="olist arabic">
-<div class="title">Possible meanings:</div>
-<ol class="arabic">
-<li>
-<p>Ate the lamb meat</p>
-</li>
-<li>
-<p>Owned/held a lamb in the past</p>
-</li>
-<li>
-<p>Owned an expensive car (slang)</p>
-</li>
-<li>
-<p>A very nice husband/bf</p>
-</li>
-</ol>
-</div>
-</dd>
-</dl>
+<p><mark>Optimal Coupling</mark> (level 6) : no direct relation</p>
 </div>
 <div class="paragraph">
-<div class="title">Chinese vs Japanese</div>
-<p>Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows &lt;20% japanese.</p>
+<p>Coupling has 6 levels<br>
+* symmetric<br>
+* btwn 2 modules
+* AB common<br>
+* AC<br>
+* AD<br>
+* BD content<br>
+&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Coupling has 6 levels</p>
+</div>
+<div class="paragraph">
+<p>Cohesion has 4 levels</p>
+</div>
+<div class="paragraph">
+<p>No relation is also a relation</p>
+</div>
+<div class="paragraph">
+<p>Use matrix</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gotojump">goto/jump</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>example:
+
+B:
+  ...
+  goto flag1;
+  ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>AB: coupling relation between these 2: content coupling</p>
+</div>
+<div class="paragraph">
+<p>This is the worst possible coupling. AVOID goto</p>
+</div>
+<div class="paragraph">
+<p>Dijkstra: late 60s. Use goto behind bars + in college</p>
+</div>
+<div class="paragraph">
+<p>Industry: use goto</p>
 </div>
 <div class="olist arabic">
-<div class="title">Solution to Mutual Misunderstandings</div>
 <ol class="arabic">
 <li>
-<p>Possibly with more Natural Language, but this might invite more confusion.</p>
+<p>Why should avoid goto (more defense)<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>When to use goto or not, based understandability, OS, huge system<br></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Math: Universal language, nail down the details.</p>
-</li>
-<li>
-<p>Diagrams: many diagrams. 1 pic = 1000 words.</p>
-</li>
-<li>
-<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
+<p>Why should minimize global variable (defend)</p>
 </li>
 </ol>
 </div>
-<div class="dlist">
-<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
-<dl>
-<dt class="hdlist1">ANSWER</dt>
-<dd>
-<p>LACK OF VISUALIZATION ( will appear on quiz )</p>
-</dd>
-</dl>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_mid_level_question_10_lines_20_lines">Mid level question : ~10 lines, &lt; 20 lines</h2>
+<div class="sectionbody">
 <div class="olist arabic">
-<div class="title">Quiz/Exam Structure</div>
+<div class="title">A numerical value wants to find min/max</div>
 <ol class="arabic">
 <li>
-<p>Concepts: Be concise, but don&#8217;t be too concise. These are 2pts, don&#8217;t write 2 pages worth of stuff.</p>
+<p>sorted&#8201;&#8212;&#8201;O(n log n), too hard</p>
 </li>
 <li>
-<p>Figures/Diagrams</p>
+<p>min = A[0], max = A[0]</p>
+<div class="ulist">
+<ul>
+<li>
+<p>prove we cannot do between than O(n)</p>
 </li>
 <li>
-<p>Figures/Diagrams or some design</p>
+<p>game theoretic argument: every element should be O(n)</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>min, max = A[0]
+for i in range(1, N):
+  if A[i] &lt; min:
+    min = A[i]
+  if A[i] &gt; max:
+    max = A[i]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Gauss</p>
+</div>
+<div class="paragraph">
+<p>FFT (fast Fourier transform)<br>
+* solve first order differential equation O(n^2)<br>
+* 1965 (Tukey &amp; <em>_</em>): reversed mergesort O(n log n) ~ O(n)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_important_algorithms">Important algorithms</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>dictionary search/binary</p>
 </li>
 <li>
-<p>Software Design/Coding: Easy/Medium difficulty.<br>
-Make answer efficient <code>O(nlogn)</code>, not <code>O(n<sup>2</sup>)</code>.</p>
+<p>hashing</p>
+</li>
+<li>
+<p>quicksort/mergesort, FFT</p>
 </li>
 </ol>
 </div>
 <div class="olist arabic">
-<div class="title">Software Engineering Goals</div>
+<div class="title">Find an efficient algorithm to find 2 neighboring elements such that A[i]&lt;&gt;A[i+1]</div>
 <ol class="arabic">
 <li>
-<p>User-friendly: Easy to use by users (ex: Apple iOS)</p>
+<p>Check the mid value:  A[mid]</p>
 </li>
 <li>
-<p>Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.</p>
+<p>A[1] &lt;&gt;A[mid]: 1:mid, goto 1st half. Else A[mid]&lt;&gt;A[n], goto 2nd half</p>
 </li>
 </ol>
 </div>
-<div class="olist arabic">
-<div class="title">How to make code understandable</div>
-<ol class="arabic">
+<div class="ulist">
+<div class="title">Suppose you have a sorted array. Shift this array by unknown numbers. How can you efficiently find the minimal value?</div>
+<ul>
 <li>
-<p>Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does.<br>
-Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.</p>
+<p>number of elements = q</p>
 </li>
 <li>
-<p>Beautify your code. Python forces you to do this.</p>
+<p>sorted array = 1, 2, 3, 4, 5</p>
 </li>
 <li>
-<p>Naming conventions - make name of functions and variables meaningful.</p>
+<p>shift 1 = 5, 1, 2, 3, 4</p>
 </li>
 <li>
-<p>Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.</p>
+<p>shift 4 = 2, 3, 4, 5, 1</p>
 </li>
-</ol>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the middle value. Compare the start value to the middle value.</p>
+</div>
+<div class="paragraph">
+<div class="title">2D Matrix. n x n is huge. Along each row the values are sorted. Along each column the values are sorted. How can we find the query value q most efficiently?</div>
+<p>| 1 | 4 | 6 |<br>
+| 1 | 5  | 8 |<br>
+| 7 | 10 | 12 |</p>
+</div>
+<div class="paragraph">
+<p>Know how to bracket the desired value in the search space</p>
+</div>
+<div class="paragraph">
+<p><strong>one solution</strong><br>
+1. Check the center<br>
+2. if center larger than query value<br>
+3. safely throw out quadrant</p>
+</div>
+<div class="paragraph">
+<p><strong>second solution</strong><br>
+1. Check one corner<br>
+2. q vs lower left corner<br>
+3. q &gt; val(corner) -&#8594; out one column<br>
+4. q &lt; val(corner) -&#8594; out one row<br>
+5. get rid of one column or one row</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-05 00:50:53 EDT
+Last updated 2018-11-28 14:25:00 EST
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="10/01/2018">
+<meta name="author" content="11/19/2018">
 <title>Software Engineering</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -435,135 +435,207 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Software Engineering</h1>
 <div class="details">
-<span id="author" class="author">10/01/2018</span><br>
+<span id="author" class="author">11/19/2018</span><br>
 </div>
 </div>
 <div id="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Moving Target</dt>
-<dd>
-<p>Huge headache for CS/Projects. In the beginning, users/clients tell you to make something. Once you are near the end, they tell you to do something different.<br>
-They have no idea whether the moved objective is very small or big.</p>
-</dd>
-</dl>
+<div class="sect1">
+<h2 id="_cohesion">Cohesion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Within/inside the module. How close the feature similar</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coupling">Coupling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Between modules. How close the feature similar</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Worst to Best</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1. content: 2 modules, 1 module directly manipulate the private/state var of the other variable</p>
+</li>
+<li>
+<p>2. Common: 2 modules share the same global variable</p>
+<div class="ulist">
+<ul>
+<li>
+<p>minimize the use of global variables: close coupling</p>
+</li>
+<li>
+<p>reluctantly: common coupling is min acceptable. Be defensive</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_cohesion_levels_from_worst_to_best">4 Cohesion Levels from worst to best</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Trash bin/garbage = coincidental. All features/functions are very loose, not close</p>
+</li>
+<li>
+<p>Logical: features share something in common</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use shorter sentences to describe main functions of this module</p>
+</li>
+<li>
+<p>Student module is a logical module because feature shares student object in common</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Temporal (level 3): actions occur in sequence</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Probability(a1, a2) &gt; threshold 0.9</p>
+</li>
+<li>
+<p><span class="underline">Example</span> : QB passes the football then the RB takes the ball and runs to get a touchdown.
+This is temporal because there is no guarantee that there will be a touchdown + it is not the only way to get a touchdown.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Procedural (level 4): 2 actions, act 1 is pre-req of act 2</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cause and Effect</p>
+</li>
+<li>
+<p>probability(a1, a2) &gt; 0.95</p>
+</li>
+<li>
+<p>high correlation</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<div class="title">CS Project Vs. Traditional Engineering</div>
-<p>Which is harder?</p>
+<p><span class="underline">Science</span><br>
+test causation vs correlation<br>
+probability(take med, illness is cured) = 0.7</p>
 </div>
 <div class="paragraph">
-<p>Software engineering is harder b/c there is a lack of visualization. It&#8217;s hard to justify our efforts.<br>
-Hard to communicate with clients/bosses<br>
-Dev vs clients - they are in a whole different world. They don&#8217;t know CS, math, or anything. Instructions can be ambiguous.</p>
+<p>acceptable cohesion is temporal</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Mutual Misunderstanding</dt>
-<dt class="hdlist1">Ex</dt>
-<dd>
-<p>One lady - "I had a lamb."<br></p>
 <div class="olist arabic">
-<div class="title">Possible meanings:</div>
-<ol class="arabic">
+<ol class="arabic" start="5">
 <li>
-<p>Ate the lamb meat</p>
+<p><span class="underline">communication</span> : one module.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Same data structure all functions conducted over the same data</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Owned/held a lamb in the past</p>
+<p>Informational</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Well Defined class : OO</p>
 </li>
 <li>
-<p>Owned an expensive car (slang)</p>
+<p>member variables : same ds</p>
 </li>
 <li>
-<p>A very nice husband/bf</p>
+<p>member functions: actions over the same data</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
-</div>
-</dd>
-</dl>
 </div>
 <div class="paragraph">
-<div class="title">Chinese vs Japanese</div>
-<p>Some Japanese borrows Chinese characters - Prof. Wie thinks he understands 60% Japanese. He goes to Japan, learns that he only knows &lt;20% japanese.</p>
+<p>access data, must go through the number function
+better privacy</p>
 </div>
-<div class="olist arabic">
-<div class="title">Solution to Mutual Misunderstandings</div>
-<ol class="arabic">
-<li>
-<p>Possibly with more Natural Language, but this might invite more confusion.</p>
-</li>
-<li>
-<p>Math: Universal language, nail down the details.</p>
-</li>
-<li>
-<p>Diagrams: many diagrams. 1 pic = 1000 words.</p>
-</li>
-<li>
-<p>Small model/prototype: Clients can see/visualize and provide informed feedback.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>public, protected, private</p>
 </div>
-<div class="dlist">
-<div class="title">Why is Software Engineering so difficult from other engineering disciplines?</div>
-<dl>
-<dt class="hdlist1">ANSWER</dt>
-<dd>
-<p>LACK OF VISUALIZATION ( will appear on quiz )</p>
-</dd>
-</dl>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Methods (1) and (2) are not good because they are not reusable.
+</td>
+</tr>
+</table>
 </div>
-<div class="olist arabic">
-<div class="title">Quiz/Exam Structure</div>
-<ol class="arabic">
-<li>
-<p>Concepts: Be concise, but don&#8217;t be too concise. These are 2pts, don&#8217;t write 2 pages worth of stuff.</p>
-</li>
-<li>
-<p>Figures/Diagrams</p>
-</li>
-<li>
-<p>Figures/Diagrams or some design</p>
-</li>
-<li>
-<p>Software Design/Coding: Easy/Medium difficulty.<br>
-Make answer efficient <code>O(nlogn)</code>, not <code>O(n<sup>2</sup>)</code>.</p>
-</li>
-</ol>
+<div class="literalblock">
+<div class="content">
+<pre>struct std {
+  string name;
+  int age;
+  string address;
+}
+
+set_age
+set_name
+#level 6a
+class std {
+  string name;
+  ..
+  set_name;
+  get_name;
+}</pre>
 </div>
-<div class="olist arabic">
-<div class="title">Software Engineering Goals</div>
-<ol class="arabic">
-<li>
-<p>User-friendly: Easy to use by users (ex: Apple iOS)</p>
-</li>
-<li>
-<p>Understandable: Easy to understand by your peers. your boss, code reviewer, colleagues, yourself in the future, example.</p>
-</li>
-</ol>
 </div>
-<div class="olist arabic">
-<div class="title">How to make code understandable</div>
-<ol class="arabic">
-<li>
-<p>Comments, lots of them. Its good because its like you are taking a rest from coding, and it gives you opportunity to review your ideas. Every function: write inputs, outputs, and paragraph on what function does.<br>
-Git: Every commit must contain a message justifying why commit is necessary. Helps you organize your comments.</p>
-</li>
-<li>
-<p>Beautify your code. Python forces you to do this.</p>
-</li>
-<li>
-<p>Naming conventions - make name of functions and variables meaningful.</p>
-</li>
-<li>
-<p>Write clean/smart logic. This is more subjective. General guidelines - use numpy vectorization, list comprehensions, etc.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>Global variable: bad sign of programming</p>
+</div>
+<div class="paragraph">
+<p>OO, FP (function, math-savvy)</p>
+</div>
+<div class="paragraph">
+<p>transhbin &#8594; logical &#8594; temp &#8594; proc &#8594; comm &#8594; info/function one module has more than 2 diff levels</p>
+</div>
+<div class="paragraph">
+<p>+
+worst ----&#8594; best</p>
+</div>
+<div class="paragraph">
+<p>rule of thumb: 1000 line of function<br>
+&gt; 500 # lines trashbin<br>
+# of lines &lt; 10 lines<br>
+efficiency : function call overhead</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-05 00:50:53 EDT
+Last updated 2018-11-28 14:25:02 EST
 </div>
 </div>
 </body>

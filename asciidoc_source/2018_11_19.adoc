@@ -1,0 +1,86 @@
+= Software Engineering
+11/19/2018
+
+
+== Cohesion
+Within/inside the module. How close the feature similar
+
+== Coupling
+Between modules. How close the feature similar
+
+* Worst to Best
+** 1. content: 2 modules, 1 module directly manipulate the private/state var of the other variable
+** 2. Common: 2 modules share the same global variable
+*** minimize the use of global variables: close coupling
+*** reluctantly: common coupling is min acceptable. Be defensive
+
+
+== 4 Cohesion Levels from worst to best
+1. Trash bin/garbage = coincidental. All features/functions are very loose, not close
+2. Logical: features share something in common
+* Use shorter sentences to describe main functions of this module
+* Student module is a logical module because feature shares student object in common
+3. Temporal (level 3): actions occur in sequence
+* Probability(a1, a2) > threshold 0.9
+* [.underline]#Example# : QB passes the football then the RB takes the ball and runs to get a touchdown.
+  This is temporal because there is no guarantee that there will be a touchdown + it is not the only way to get a touchdown.
+4. Procedural (level 4): 2 actions, act 1 is pre-req of act 2
+* Cause and Effect
+* probability(a1, a2) > 0.95
+* high correlation
+
+
+[.underline]#Science# +
+test causation vs correlation +
+probability(take med, illness is cured) = 0.7
+
+acceptable cohesion is temporal
+
+[start = 5]
+. [.underline]#communication# : one module.
+* Same data structure all functions conducted over the same data
+
+. Informational
+* Well Defined class : OO
+* member variables : same ds
+* member functions: actions over the same data
+
+access data, must go through the number function
+better privacy
+
+public, protected, private
+
+
+NOTE: Methods (1) and (2) are not good because they are not reusable.
+
+
+....
+struct std {
+  string name;
+  int age;
+  string address;
+}
+
+set_age
+set_name
+#level 6a
+class std {
+  string name;
+  ..
+  set_name;
+  get_name;
+}
+....
+
+Global variable: bad sign of programming
+
+OO, FP (function, math-savvy)
+
+transhbin -> logical -> temp -> proc -> comm -> info/function one module has more than 2 diff levels
++
+worst -----> best
+
+rule of thumb: 1000 line of function +
+> 500 # lines trashbin +
+# of lines < 10 lines +
+efficiency : function call overhead

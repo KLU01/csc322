@@ -1,0 +1,110 @@
+= Software Engineering
+11/21/2018
+
+.Content, Common, Control (Good)
+
+#Stamp Coupling# (level 4) : 2 modules pass more data necessary, waste space/bandwidth
+
+#Data Coupling# (level 5) : all data passed btwn are
+
+#Optimal Coupling# (level 6) : no direct relation
+
+Coupling has 6 levels +
+* symmetric +
+* btwn 2 modules
+* AB common +
+* AC +
+* AD +
+* BD content +
+...
+
+Coupling has 6 levels
+
+Cohesion has 4 levels
+
+No relation is also a relation
+
+Use matrix
+
+== goto/jump
+
+....
+example:
+
+B:
+  ...
+  goto flag1;
+  ...
+....
+
+AB: coupling relation between these 2: content coupling
+
+This is the worst possible coupling. AVOID goto
+
+Dijkstra: late 60s. Use goto behind bars + in college
+
+Industry: use goto
+
+1. Why should avoid goto (more defense) +
+* When to use goto or not, based understandability, OS, huge system +
+2. Why should minimize global variable (defend)
+
+== Mid level question : ~10 lines, < 20 lines
+
+.A numerical value wants to find min/max
+1. sorted -- O(n log n), too hard
+2. min = A[0], max = A[0]
+* prove we cannot do between than O(n)
+* game theoretic argument: every element should be O(n)
+
+....
+min, max = A[0]
+for i in range(1, N):
+  if A[i] < min:
+    min = A[i]
+  if A[i] > max:
+    max = A[i]
+....
+
+Gauss
+
+FFT (fast Fourier transform) +
+* solve first order differential equation O(n^2) +
+* 1965 (Tukey & ___): reversed mergesort O(n log n) ~ O(n)
+
+
+== Important algorithms
+1. dictionary search/binary
+2. hashing
+3. quicksort/mergesort, FFT
+
+.Find an efficient algorithm to find 2 neighboring elements such that A[i]<>A[i+1]
+1. Check the mid value:  A[mid]
+2. A[1] <>A[mid]: 1:mid, goto 1st half. Else A[mid]<>A[n], goto 2nd half
+
+.Suppose you have a sorted array. Shift this array by unknown numbers. How can you efficiently find the minimal value?
+* number of elements = q
+* sorted array = 1, 2, 3, 4, 5
+* shift 1 = 5, 1, 2, 3, 4
+* shift 4 = 2, 3, 4, 5, 1
+
+Check the middle value. Compare the start value to the middle value.
+
+.2D Matrix. n x n is huge. Along each row the values are sorted. Along each column the values are sorted. How can we find the query value q most efficiently?
+| 1 | 4 | 6 | +
+| 1 | 5  | 8 | +
+| 7 | 10 | 12 |
+
+Know how to bracket the desired value in the search space
+
+*one solution* +
+1. Check the center +
+2. if center larger than query value +
+3. safely throw out quadrant
+
+*second solution* +
+1. Check one corner +
+2. q vs lower left corner +
+3. q > val(corner) --> out one column +
+4. q < val(corner) --> out one row +
+5. get rid of one column or one row
