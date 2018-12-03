@@ -1,0 +1,35 @@
+= Software Engineering
+12/03/2018
+
+== Application of Software Engineering
+1. Medical (non-invasive treatment, personalized)
+* BMI
+** Different qualification for different countries and cultures--Underweight, Normal, Obese
+* CT (radiation bad to body), MRI (safer)
+** To us, same--4D, 3D space, 1D time
+2. Military (non-invasive checking, surveillance)
+3. Law Enforcements
+* Bomb detection
+4. Traffic
+5. Auto Driving
+6. Business (supermarket, robot)
+7. Gaming
+
+== Imaging
+*Types of images*: gray scale, color image, 3D CT image, infra-red
+
+* 3 bytes (c_r, c_g, c_b), 8 bit per color
+
+*What is a video?* : image sequence
+
+color to gray in binary
+histogram
+image processing
+low-level
+image understanding (computer vision, NLP, AI)
+
+Humans eyes are limited to certain colors
+
+Compression based on color
+
+Run-length encoding (RLE): ROM burn in RLE algorithm encode binary stream into runs
