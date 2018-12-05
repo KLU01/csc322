@@ -1,0 +1,89 @@
+= Software Engineering
+12/5/2018
+
+== Data Compression
+
+=== RLE
+Fax machine
+
+=== DPCM
+Definition : adjacent data are of similar value cheap Compression
+
+* Fast and universal
+
+.Fast Fourier Transform `O(n^2)`, Fourier `O(n log n)`
+FFT (signal) is the king of ny transform, basis of function/signal analysis
+
+* data: space domain: image/time: music/sound/speech
+
+.2D FFT
+* natural image/sound
+* most of coefficient = 0
+* sparse representation
+* line: Special sine/cosine curve (most widely)
+* wavelets: small waves better results than FFT
+
+.Hammer & Nail Technique
+Treat every function as linear b/c 2D signal linear function is easier to analyze
+
+.Newton
+* develops calculus `delta x -> 0`
+* fpg: joint picture expert group: FFT + DPCM + RLE + Huffman (entropy encoding)
+
+.Compression
+Compression shrinks delta x. Idea is to not shrink the domain of x too small and instead
+represent the function as a total sum of some basis function
+
+inner product = 0
+
+energy = 1 (normalize)
+
+Compression method should pass the Turing test (test of intelligence)
+
+* threshold beyond reasonable doubt
+** shopping/cheating in final exam -- 5% (can be considered too generous)
+** murder -- 1% (can be considered too tough)
+
+.mp3
+* motion picture expert group No.1, mpeg3
+* gives best possible quality
+* passes Turing test
+1. FFT: Keep small # of non-zero sine/cosine
+2. Exploit human ear's weakness--hear loud sound: cannot hear anything
+  - Data skipping: reduce data size
+
+.Video Compression
+* 1 sec, 25 frames (still image)
+* Exploits something--temporal redundancy
+** take the difference
+* Also find the motion vector (that way we wont have to find the literal difference)
+* Partition video region into cold(bk), hot(fore: journalist): 25/sec
+
+
+== Qualities Desired
+1. satisfy specifications
+2. adapt--learn from utilities
+* hardcode, evolve
+
+== Expert Systems
+Finite cases
+
+....
+Example: take elevator
+1. Check door opens
+2. Check direction
+2a. Check space
+3. Check there is a cart/floor (in case there is a malfunction)
+....
+
+NOTE: For coding questions, be clean--readable/understandable + logic (minimize global variable, avoid goto)+
+Understandability: +
+1. more comments +
+2. meaningful variable names
+
+== Coding
+1. Choice of programming language
+* legacy system
+* availability
+* expertise
+* cost/benefit analysis
