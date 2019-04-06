@@ -1,0 +1,105 @@
+= Software Engineering
+12/10/2018
+
+.Debugging:
+* part of coding/implementation phase
+* conform to spec-most important quality
+
+.Testing
+* incomplete induction: choose some cases to test
+* Observation (non-invasive) vs. experimentation (actively test)
+** experimentation >> observation. Get your hands dirty. Be hands on. Pose some cases, see consequences.
+** see cause and effect--experiment(randomized testing)
+* Tester -- software verification engineer
+* Need negative mentality
+
+.Static vs Dynamic Testing
+
+
+.Verification
+* Verify system conform to spec. basis is spec.
+* insider job
+* 1-1 mapping between system and spec sentences, paragraphs
+
+.Validation
+* verification + more quality measure
+* user-friendly(GUI, user-exp)
+
+.Double-Blind Test
+* A common
+* google vs bing
+* minimalist bing: better pic
+
+ * rigously test g>b:
+* target: relevance
+  ** how to judge goodness objectively
+* double-blind tests:
+  ** a common long list of keywords to searchc/query
+** typicl non biased
+** no ideal which engine is being used
+** evalute the results have no idea
+** 23% vs 21.9%
+*** google vs bing
+*** >1% you need at least 100
+*** #of searches you should conduct to
+
+.Examples of Where this is useful
+* ccny:
+* trump: verb win bridge
+** more relevant
+* two systems:test better
+**  rigourout doublbe-blindness test
+  **  blind to patients
+    **      to doctors
+
+* papers: single-blind(typically) only to the writer --> will favor the big  name contributor
+        ** double-blind(to make it unclear who is going to grade the paper and who is going to write it) --> better to be more fair it is objective
+** component testing: integration testing
+* thread testing: chose a typical scenario like what should happen in a system
+
+.black-box testing: treat the system a a black box, we don't know what is happening inside we just want to make sure that our input gives us the  correct output
+* F: Input:INT Output:INT
+
+* partitioning testing:
+  ** randmly apply many cases to make sure they work properly
+    ** f:encryption:p,n,0
+      ***  more meaningful to  try prime, product of 2 primes
+* input: string: Null
+  ** single-char 2, 3,...... randomized length
+  ** coding: put testing in mind
+  * Much easier
+.Whitebox
+* glassbox/structural testing
+* see thru: peteri-net/class diag/flow char
+* test cases cover all important cases
+* too diffiuclt
+
+.Preference?
+* in industry: which one is more popular?
+* >95%
+* for small subsystem crucial, like if you want to make srue that something is perfect you will test it using glassbox instead of blackbox
+.Top-Down
+* test the main function first and then the
+* top down is more important: global/ higher level performace is more important than lower level
+* pass grade : overall system should be working
+
+.Alpha Version vs Beta Version:
+* alpha: pass the internal testing
+* beta: dynamic version : initially alpha
+** eventually = delivered version
+* delivered system:
+** testing finished, maintanence starts
+*** required maintenance: if bugs are found about specification, bugs should be fixed like customer service
+**** collect complaint: more + more important complaints
+**** life cycle : mini spec+design+ im+test
+*** evolution: better or imporvement: not required
+*** Software re-engineering vs. reverse software engineering
+*** (forward) software engineering: spec+plan+desing+coding+testing+m
+*** software re-engineering vs. the same system: use diff/better pl/ds/alg
+*** reverse software engineering:
+**** come up with design and specification for a already working product
+**** AI/spying not the easiest thing to do. (companies do this but won't admit to it) more like program understanding
+*** working system: legacy system
+**** a system that is written in old format, languge, outdated language or structure .
+*** sre: easier or more diff than conventional se:
+**** its easier no need to think about how to design because there is already a working system to consult.
